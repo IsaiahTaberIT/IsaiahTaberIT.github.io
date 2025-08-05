@@ -1,0 +1,22 @@
+﻿
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-attachment:local;
+    color:white;
+    text-align: center;
+    background-position-y: center;
+    background-image: radial-gradient(rgba(64,64,64,0.5),rgba(0,0,0,1)), url("Images/julia(-1.148933,0.2095252).png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.goto{
+    width: 100px;
+}
