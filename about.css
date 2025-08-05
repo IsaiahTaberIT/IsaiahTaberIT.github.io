@@ -64,7 +64,7 @@
 
 .mainblock {
     border-radius: 20px;
-    background-image: radial-gradient(rgba(0,0,0,0.0),rgba(0,0,0,1)), url("Images/ComplexBrackground2.png");
+    background-image: radial-gradient(rgba(32,32,32,0.5),rgba(0,0,0,1)), url("Images/ComplexBrackground2.png");
     color: white;
     height: stretch;
     width: 75%;
