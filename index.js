@@ -1,11 +1,14 @@
 ﻿
-let projectindex = 0;
+let projectindex = 1;
 let animationProgress = 0;
 let animationQueue = 0;
 let scrollDirection = 0;
 
 let animationRunning = false;
-const step = 0.05;
+let step = 0.05;
+const baseStep = 0.05;
+let pow = 1.25;
+const basePow = 1.25;
 
 function ScrollAnimation() {
     animationRunning = true;
@@ -13,128 +16,65 @@ function ScrollAnimation() {
 
     if (animationProgress < 1) {
         animationProgress += step;
-      //  console.log(animationProgress);
+     //   console.log(animationProgress);
         
         requestAnimationFrame(ScrollAnimation);
 
     }
     else if (animationQueue != 0) {
       //  console.log("RestartedAnimation");
-
         projectindex += scrollDirection;
-
-        if (projectindex < 0) {
-            projectindex += projects.length -1;
+        if (TryStartAnimation()) {
+            step += 0.05;
+            pow = 1;
         }
         else {
-            projectindex %= (projects.length);
+            step = baseStep;
+            pow = basePow;
         }
 
-        animationProgress = 0;
-        scrollDirection = animationQueue;
-        animationQueue = 0;
-        requestAnimationFrame(ScrollAnimation);
     }
     else {
      
         projectindex += scrollDirection;
-
-        if (projectindex < 0) {
-            projectindex += projects.length;
-        }
-        else {
-            projectindex %= (projects.length);
-        }
         animationProgress = 0;
         animationRunning = false;
-       
+        step = baseStep;
+        pow = basePow;
         AnimateProjects();
     }
 }
 
 function AnimateProjects() {
 
-    let element = document.getElementById("projectinjection")
-    element.innerHTML = "";
-    let afters = [];
-    let afterthresholds = [];
-    let afterindicies = [];
-
     let scaleThreshold = 0;
 
     for (var i = 0; i < projects.length; i++) {
 
+        
+        let projectedindex = projectindex + (Math.pow(animationProgress, pow) * scrollDirection);
 
+        let distance = Math.abs(i - projectedindex);
 
+        let temp = document.getElementById("id" + (i + 1));
 
-    
+        let dif = 0;
 
-        let index = projectindex - 1 + i;
-        if (index < 0) {
-            index += projects.length;
+      
+        dif = 1.9 - distance;
+
+        if (dif > 0) {
+            temp.style.display = "flex";
+            temp.style.width = 30 * dif + "%";
+            temp.style.height = 50 * dif + "%"
         }
-        let modindex = index % projects.length;
-
-        let forwardwrapdistance = projects.length - projectindex + i + (animationProgress * scrollDirection) ;
-        let reversewrapdisrance = projects.length - i + projectindex + ( animationProgress * scrollDirection) ; 
-
-     
-
-       // + (animationProgress * scrollDirection)
-
-       
-        let distance = (projectindex - i + (animationProgress * scrollDirection));
-        let absdistance = Math.abs(projectindex - i + (animationProgress * scrollDirection));
-
-        if (projectindex == i) {
-            distance = 0;
-            absdistance = 0;
+        else {
+            temp.style.display = "none";
+            
         }
-        if (i == 0) {
-       
-
-        }
-        //
-
-         scaleThreshold = 1.9 - absdistance;
-
-
-        if (scaleThreshold >= 0) {
-
-            if (distance > 0) {
-
-                element.innerHTML += projects[i].NewProjectPanel();
-                let temp = document.getElementById("id" + (i + 1));
-
-                let scalefactor = lerp(5, 50, scaleThreshold / 2);
-
-                temp.style.width = scalefactor + "%";
-                temp.style.height = scalefactor + "%";
-            }
-            else {
-                afters.push(projects[i]);
-                afterthresholds.push(scaleThreshold)
-                afterindicies.push(i);
-            }
-        }
-            // temp.style.height = (mousePosX / 10) + "px";
+          
+   
     }
-
-    for (var i = 0; i < afters.length; i++) {
-
-        element.innerHTML += afters[i].NewProjectPanel();
-        let temp = document.getElementById("id" + (afterindicies[i] + 1) );
-
-        console.log((i));
-
-        console.log("id" + (i + 1));
-
-        let scalefactor = lerp(5, 50, afterthresholds[i] / 6);
-
-        temp.style.width = scalefactor + "%";
-        temp.style.height = scalefactor + "%";
-    }
-
 
 
 
@@ -154,16 +94,60 @@ document.addEventListener('keydown', function (event) {
         animationQueue = -1;
     }
 
-    if (animationRunning == false && animationQueue != 0) {
+
+    if (animationRunning == false) {
+        TryStartAnimation(); 
+    }
+    
+  
+
+});
+
+function Cycle(dir) {
+
+    animationQueue = dir;
+
+    if (animationRunning == false) {
+        TryStartAnimation();
+    }
+   
+
+}
+function TryStartAnimation() {
+
+
+
+    if (animationQueue != 0) {
+
+        if (animationQueue == 1 && projectindex == projects.length -1) {
+            animationQueue = 0;
+            animationRunning = false;
+
+            return false;
+        }
+
+
+        if (animationQueue == -1 && projectindex == 0) {
+            animationQueue = 0;
+            animationRunning = false;
+
+            return false;
+        }
+
         console.log("StartedAnimation");
         animationProgress = 0;
         scrollDirection = animationQueue;
         animationQueue = 0;
         animationRunning = true;
+
         requestAnimationFrame(ScrollAnimation);
+
+        return true;
+
     }
 
-});
+    return false;
+}
 
 
 let mousePosX = 0;
@@ -189,13 +173,35 @@ const projects = [];
 projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id1"));
 projects.push(new ProjectPanelData("images/ComplexBrackground2.png", "about.html", "sample text", "id2"));
 projects.push(new ProjectPanelData("images/SimpleNoiseBackground.png", "about.html", "sample text", "id3"));
-
 projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id4"));
 projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id5"));
 
+projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id6"));
+projects.push(new ProjectPanelData("images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
+projects.push(new ProjectPanelData("images/SimpleNoiseBackground.png", "about.html", "sample text", "id8"));
+projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id9"));
+projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id10"));
+
+projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id11"));
+projects.push(new ProjectPanelData("images/ComplexBrackground2.png", "about.html", "sample text", "id12"));
+projects.push(new ProjectPanelData("images/SimpleNoiseBackground.png", "about.html", "sample text", "id13"));
+projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id14"));
+projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id15"));
+
+
+let element = document.getElementById("projectinjection")   
+
+
+
+for (var i = 0; i < projects.length; i++) {
+    element.innerHTML += projects[i].NewProjectPanel();
+}
+
+
+AnimateProjects();
 function Update() {
 
-    console.log(projectindex);
+    console.log("projectindex" + projectindex);
 
     let t = 0.1;
     let ypos = parseFloat(circlelement.style.top) - (parseInt(circlelement.clientHeight) / 2) * t;
