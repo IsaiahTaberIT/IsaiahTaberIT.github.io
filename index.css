@@ -7,16 +7,98 @@ html, body {
 
 
 body {
-    background-attachment:local;
+    background-attachment:fixed;
     color:white;
     text-align: center;
-    background-position-y: center;
     background-image: radial-gradient(rgba(64,64,64,0.5),rgba(0,0,0,1)), url("Images/julia(-1.148933,0.2095252)_940x540.png");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
 }
 
 .goto{
     width: 100px;
+}
+
+h1 {
+    font-size: 500%;
+}
+.lowerPanel {
+    border: inset;
+  
+    border-color: black;
+    margin-top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: saddlebrown;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(64,64,64,0.5)), url("Images/SimpleNoiseBackgroundGreyScale.png");
+}
+
+.projects {
+  
+    border-radius: 100px;
+    text-align: center;
+    margin-top: 10%;
+    width: 60%;
+    height: 60%;
+    background-color: saddlebrown;
+    background-image: linear-gradient(rgba(0,0,0,1),rgba(64,64,64,0.5));
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projectcontainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    width: 60%;
+    height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.projectpanelbutton {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    object-fit: cover;
+    background-size: 100%;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  
+}
+
+.buttontext {
+    color: red;
+    border-radius: 20%;
+    padding-top: 10%;
+    background-color: rgba(180,180,180,0.7);
+    height: 25%;
+    width: 100%;
+    font-size-adjust: 0.5;
+    text-wrap-mode: wrap;
+   
+}
+
+
+.projectpanel {
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 1%;
+    width: 30%;
+    height: 80%;
+
+    background-color: saddlebrown;
+    background-image: linear-gradient(rgba(64,64,64,0.9),rgba(255,255,255,0.1));
+}
+
+.circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+  
+    border-radius: 10px;
+    background-color: green;
+    pointer-events: none;
 }

@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -15,20 +19,32 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\julia(-1.148933,0.2095252).png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Images\\julia(-1.148933,0.2095252).png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground2.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Images\\ComplexBrackground2.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Images\\ComplexBrackground1.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackgroundSansGradient.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Images\\SimpleNoiseBackgroundSansGradient.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackground.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Images\\SimpleNoiseBackground.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\julia(-1.148933,0.2095252).png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Images\\julia(-1.148933,0.2095252).png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\background||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -46,21 +62,21 @@
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
-      "VerticalTabListWidth": 149,
+      "VerticalTabListWidth": 252,
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "index.css",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css",
               "RelativeDocumentMoniker": "index.css",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css",
               "RelativeToolTip": "index.css",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-08-05T04:07:46.687Z",
               "IsPinned": true,
@@ -68,13 +84,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAB8AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-08-03T15:45:33.713Z",
               "IsPinned": true,
@@ -82,27 +98,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "Index.js",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Index.js",
               "RelativeDocumentMoniker": "Index.js",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Index.js",
               "RelativeToolTip": "Index.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAxwHEAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-03T18:07:10.098Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "julia(-1.148933,0.2095252).png",
-              "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\julia(-1.148933,0.2095252).png",
-              "RelativeDocumentMoniker": "Images\\julia(-1.148933,0.2095252).png",
-              "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\julia(-1.148933,0.2095252).png",
-              "RelativeToolTip": "Images\\julia(-1.148933,0.2095252).png",
+              "DocumentIndex": 7,
+              "Title": "ComplexBrackground1.png",
+              "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground1.png",
+              "RelativeDocumentMoniker": "Images\\ComplexBrackground1.png",
+              "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground1.png",
+              "RelativeToolTip": "Images\\ComplexBrackground1.png",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-08-05T12:52:19.644Z",
+              "WhenOpened": "2025-08-05T13:49:46.549Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ComplexBrackground2.png",
+              "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground2.png",
+              "RelativeDocumentMoniker": "Images\\ComplexBrackground2.png",
+              "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground2.png",
+              "RelativeToolTip": "Images\\ComplexBrackground2.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-08-05T13:49:44.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "SimpleNoiseBackgroundSansGradient.png",
+              "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackgroundSansGradient.png",
+              "RelativeDocumentMoniker": "Images\\SimpleNoiseBackgroundSansGradient.png",
+              "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackgroundSansGradient.png",
+              "RelativeToolTip": "Images\\SimpleNoiseBackgroundSansGradient.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-08-05T13:41:40.857Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SimpleNoiseBackground.png",
+              "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackground.png",
+              "RelativeDocumentMoniker": "Images\\SimpleNoiseBackground.png",
+              "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackground.png",
+              "RelativeToolTip": "Images\\SimpleNoiseBackground.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-08-05T13:41:29.664Z",
               "EditorCaption": ""
             },
             {
@@ -111,7 +164,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
+              "Title": "julia(-1.148933,0.2095252).png",
+              "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\julia(-1.148933,0.2095252).png",
+              "RelativeDocumentMoniker": "Images\\julia(-1.148933,0.2095252).png",
+              "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\julia(-1.148933,0.2095252).png",
+              "RelativeToolTip": "Images\\julia(-1.148933,0.2095252).png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-08-05T12:52:19.644Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
               "Title": "background",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\background",
               "RelativeDocumentMoniker": "background",
@@ -119,11 +183,12 @@
               "RelativeToolTip": "background",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-04T22:06:42.885Z"
+              "WhenOpened": "2025-08-04T22:06:42.885Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "education",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\education",
               "RelativeDocumentMoniker": "education",
@@ -131,11 +196,12 @@
               "RelativeToolTip": "education",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-04T21:48:43.021Z"
+              "WhenOpened": "2025-08-04T21:48:43.021Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "aboutmetext",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\aboutmetext",
               "RelativeDocumentMoniker": "aboutmetext",
@@ -143,44 +209,47 @@
               "RelativeToolTip": "aboutmetext",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABFAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-04T19:59:07.42Z"
+              "WhenOpened": "2025-08-04T19:59:07.42Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "about.css",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.css",
               "RelativeDocumentMoniker": "about.css",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.css",
               "RelativeToolTip": "about.css",
-              "ViewState": "AgIAADMAAAAAAAAAAAAAAEIAAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAEcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-08-03T18:56:10.96Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 5,
               "Title": "about.js",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.js",
               "RelativeDocumentMoniker": "about.js",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.js",
               "RelativeToolTip": "about.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2025-08-03T18:49:13.792Z"
+              "WhenOpened": "2025-08-03T18:49:13.792Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 4,
               "Title": "about.html",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html",
               "RelativeDocumentMoniker": "about.html",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html",
               "RelativeToolTip": "about.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-08-03T17:10:50.609Z"
+              "WhenOpened": "2025-08-03T17:10:50.609Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
