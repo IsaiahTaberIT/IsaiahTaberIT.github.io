@@ -170,23 +170,23 @@ class ProjectPanelData {
 
 const projects = []; 
 
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id1"));
-projects.push(new ProjectPanelData("images/ComplexBrackground2.png", "about.html", "sample text", "id2"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackground.png", "about.html", "sample text", "id3"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id4"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id5"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id1"));
+projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id2"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id3"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id4"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id5"));
 
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id6"));
-projects.push(new ProjectPanelData("images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackground.png", "about.html", "sample text", "id8"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id9"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id10"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id6"));
+projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id8"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id9"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id10"));
 
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id11"));
-projects.push(new ProjectPanelData("images/ComplexBrackground2.png", "about.html", "sample text", "id12"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackground.png", "about.html", "sample text", "id13"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id14"));
-projects.push(new ProjectPanelData("images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id15"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id11"));
+projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id12"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id13"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id14"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id15"));
 
 
 let element = document.getElementById("projectinjection")   
