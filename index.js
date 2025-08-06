@@ -24,14 +24,12 @@ function ScrollAnimation() {
     else if (animationQueue != 0) {
       //  console.log("RestartedAnimation");
         projectindex += scrollDirection;
+
         if (TryStartAnimation()) {
             step += 0.05;
             pow = 1;
         }
-        else {
-            step = baseStep;
-            pow = basePow;
-        }
+      
 
     }
     else {
@@ -39,7 +37,6 @@ function ScrollAnimation() {
         projectindex += scrollDirection;
         animationProgress = 0;
         animationRunning = false;
-        step = baseStep;
         pow = basePow;
         AnimateProjects();
     }
@@ -155,12 +152,16 @@ let mousePosY = 0;
 
 
 class ProjectPanelData {
-    constructor(url, href, text,id) {
+  
+    constructor(url, href, text, inid) {
         this.url = url;
         this.href = href;
         this.text = text;
-        this.id = id;
+        this.id = inid;
     }
+
+
+
 
     NewProjectPanel() {
 
@@ -170,23 +171,23 @@ class ProjectPanelData {
 
 const projects = []; 
 
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id1"));
-projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id2"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id3"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id4"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id5"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
 
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id6"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
 projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
 projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id8"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id9"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id10"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
 
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id11"));
-projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id12"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id13"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id14"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text", "id15"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
 
 
 let element = document.getElementById("projectinjection")   
@@ -194,6 +195,10 @@ let element = document.getElementById("projectinjection")
 
 
 for (var i = 0; i < projects.length; i++) {
+    projects[i].id = "id" + (i + 1);
+
+   // console.log(projects[i].id);
+
     element.innerHTML += projects[i].NewProjectPanel();
 }
 
@@ -201,7 +206,101 @@ for (var i = 0; i < projects.length; i++) {
 AnimateProjects();
 function Update() {
 
-    console.log("projectindex" + projectindex);
+
+    if (animationRunning == false) {
+
+        if (step > baseStep) {
+            step -= 0.01;
+        }
+
+        if (step < baseStep) {
+            step = baseStep;
+        }
+
+    }
+
+    //console.log("projectindex" + projectindex);
+    AnimateMouseTrail();
+
+    requestAnimationFrame(Update);
+}
+
+
+let Trail = [];
+let TrailPositionsX = [];
+let TrailPositionsY = [];
+
+for (var i = 0; i < 7; i++) {
+    Trail.push(document.getElementById("circle" + (i + 1)));
+    TrailPositionsX.push(0)
+    TrailPositionsY.push(0)
+}
+
+
+let circlelement = document.getElementById("circle1")
+
+
+
+function AnimateMouseTrail() {
+
+    let t = 0.2;
+
+    for (var i = 0; i < Trail.length; i++) {
+
+        if (i == 0) {
+
+           
+
+        
+            TrailPositionsY[i] = parseFloat(circlelement.style.top) - (parseInt(Trail[i].clientHeight) / 2) * t;
+            TrailPositionsX[i] = parseFloat(circlelement.style.left) - (parseInt(Trail[i].clientWidth) / 2) * t;
+
+            if (!isNaN(TrailPositionsX[i]) && !isNaN(TrailPositionsY[i])) {
+                TrailPositionsX[i] = lerp(TrailPositionsX[i], mousePosX, t);
+                TrailPositionsY[i] = lerp(TrailPositionsY[i], mousePosY, t);
+            }
+            else {
+                TrailPositionsX[i] = 0;
+                TrailPositionsY[i] = 0;
+            }
+
+            Trail[i].style.top = TrailPositionsY[i] + 'px';
+            Trail[i].style.left = TrailPositionsX[i] + 'px';
+
+
+        }
+        else {
+           
+
+        //    TrailPositionsY[i] = parseFloat(circlelement.style.top) - (parseInt(Trail[i].clientHeight) / 2) * t;
+        //    TrailPositionsY[i] = parseFloat(circlelement.style.left) - (parseInt(Trail[i].clientWidth) / 2) * t;
+
+            if (!isNaN(TrailPositionsX[i]) && !isNaN(TrailPositionsY[i])) {
+
+                TrailPositionsX[i] = lerp(TrailPositionsX[i], TrailPositionsX[i - 1], t * (3/ (i + 2)));
+                TrailPositionsY[i] = lerp(TrailPositionsY[i], TrailPositionsY[i - 1], t * (3 / (i + 2)));
+            }
+            else {
+                TrailPositionsX[i] = 0;
+                TrailPositionsY[i] = 0;
+            }
+
+            Trail[i].style.top = TrailPositionsY[i] + 'px';
+
+            Trail[i].style.left = TrailPositionsX[i] + 'px';
+            Trail[i].style.width = (4/(i+3)) + '%';
+
+
+
+        }
+
+
+
+    }
+
+
+    /*
+
 
     let t = 0.1;
     let ypos = parseFloat(circlelement.style.top) - (parseInt(circlelement.clientHeight) / 2) * t;
@@ -218,8 +317,8 @@ function Update() {
 
     circlelement.style.top = ypos + 'px';
     circlelement.style.left = xpos + 'px';
+    */
 
-    requestAnimationFrame(Update);
 }
 
 requestAnimationFrame(Update);
@@ -234,7 +333,6 @@ document.addEventListener('mousemove', function (event) {
 
 
 
-let circlelement = document.getElementById("circleid")
 
 
 function lerp(start, end, t)
