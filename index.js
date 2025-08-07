@@ -10,6 +10,11 @@ const baseStep = 0.05;
 let pow = 1.25;
 const basePow = 1.25;
 
+let leftButtonElement = document.getElementById("leftCycle");
+
+let rightButtonElement = document.getElementById("rightCycle"); 
+
+
 function ScrollAnimation() {
     animationRunning = true;
     AnimateProjects();
@@ -207,6 +212,26 @@ AnimateProjects();
 function Update() {
 
 
+    if (projectindex == projects.length - 1) {
+
+        rightButtonElement.disabled = true;
+    }
+    else {
+        rightButtonElement.disabled = false;
+
+    }
+
+
+    if (projectindex == 0) {
+        leftButtonElement.disabled = true;
+
+    }
+    else {
+        leftButtonElement.disabled = false;
+
+    }
+
+
     if (animationRunning == false) {
 
         if (step > baseStep) {
@@ -225,48 +250,54 @@ function Update() {
     requestAnimationFrame(Update);
 }
 
+let trailParticles = 20;
+let trail = [];
+let trailPositionsX = [];
+let trailPositionsY = [];
 
-let Trail = [];
-let TrailPositionsX = [];
-let TrailPositionsY = [];
+let trailElement = document.getElementById("trail");
 
-for (var i = 0; i < 7; i++) {
-    Trail.push(document.getElementById("circle" + (i + 1)));
-    TrailPositionsX.push(0)
-    TrailPositionsY.push(0)
+for (var i = 0; i < trailParticles; i++) {
+    trailElement.innerHTML += "<div id=" + ("circle" + (i + 1)) +" class=\"circle\"> </div>";
+    trailPositionsX.push(0)
+    trailPositionsY.push(0)
+}
+
+for (var i = 0; i < trailParticles; i++) {
+    trail.push(document.getElementById("circle" + (i + 1)));
 }
 
 
-let circlelement = document.getElementById("circle1")
+
+
 
 
 
 function AnimateMouseTrail() {
 
-    let t = 0.2;
+    let t = 0.5;
+    let falloff = 10;
 
-    for (var i = 0; i < Trail.length; i++) {
+    for (var i = 0; i < trail.length; i++) {
 
         if (i == 0) {
 
            
 
         
-            TrailPositionsY[i] = parseFloat(circlelement.style.top) - (parseInt(Trail[i].clientHeight) / 2) * t;
-            TrailPositionsX[i] = parseFloat(circlelement.style.left) - (parseInt(Trail[i].clientWidth) / 2) * t;
+            trailPositionsY[i] = parseFloat(trail[i].style.top) - (parseInt(trail[i].clientHeight) / 2) * t;
+            trailPositionsX[i] = parseFloat(trail[i].style.left) - (parseInt(trail[i].clientWidth) / 2) * t;
 
-            if (!isNaN(TrailPositionsX[i]) && !isNaN(TrailPositionsY[i])) {
-                TrailPositionsX[i] = lerp(TrailPositionsX[i], mousePosX, t);
-                TrailPositionsY[i] = lerp(TrailPositionsY[i], mousePosY, t);
+            if (!isNaN(trailPositionsX[i]) && !isNaN(trailPositionsY[i])) {
+                trailPositionsX[i] = lerp(trailPositionsX[i], mousePosX, t);
+                trailPositionsY[i] = lerp(trailPositionsY[i], mousePosY, t);
             }
             else {
-                TrailPositionsX[i] = 0;
-                TrailPositionsY[i] = 0;
+                trailPositionsX[i] = 0;
+                trailPositionsY[i] = 0;
             }
 
-            Trail[i].style.top = TrailPositionsY[i] + 'px';
-            Trail[i].style.left = TrailPositionsX[i] + 'px';
-
+      
 
         }
         else {
@@ -275,49 +306,28 @@ function AnimateMouseTrail() {
         //    TrailPositionsY[i] = parseFloat(circlelement.style.top) - (parseInt(Trail[i].clientHeight) / 2) * t;
         //    TrailPositionsY[i] = parseFloat(circlelement.style.left) - (parseInt(Trail[i].clientWidth) / 2) * t;
 
-            if (!isNaN(TrailPositionsX[i]) && !isNaN(TrailPositionsY[i])) {
+            if (!isNaN(trailPositionsX[i]) && !isNaN(trailPositionsY[i])) {
 
-                TrailPositionsX[i] = lerp(TrailPositionsX[i], TrailPositionsX[i - 1], t * (3/ (i + 2)));
-                TrailPositionsY[i] = lerp(TrailPositionsY[i], TrailPositionsY[i - 1], t * (3 / (i + 2)));
+                trailPositionsX[i] = lerp(trailPositionsX[i], trailPositionsX[i - 1], t * (falloff / (i + (falloff - 1))));
+                trailPositionsY[i] = lerp(trailPositionsY[i], trailPositionsY[i - 1], t * (falloff / (i + (falloff - 1))));
             }
             else {
-                TrailPositionsX[i] = 0;
-                TrailPositionsY[i] = 0;
+                trailPositionsX[i] = 0;
+                trailPositionsY[i] = 0;
             }
 
-            Trail[i].style.top = TrailPositionsY[i] + 'px';
-
-            Trail[i].style.left = TrailPositionsX[i] + 'px';
-            Trail[i].style.width = (4/(i+3)) + '%';
 
 
 
         }
 
+        trail[i].style.top = trailPositionsY[i] + 'px';
+        trail[i].style.left = trailPositionsX[i] + 'px';
 
+
+        trail[i].style.width = (12 / (i + 10)) + '%';
 
     }
-
-
-    /*
-
-
-    let t = 0.1;
-    let ypos = parseFloat(circlelement.style.top) - (parseInt(circlelement.clientHeight) / 2) * t;
-    let xpos = parseFloat(circlelement.style.left) - (parseInt(circlelement.clientWidth) / 2) * t;
-
-    if (!isNaN(xpos) && !isNaN(ypos)) {
-        xpos = lerp(xpos, mousePosX, t);
-        ypos = lerp(ypos, mousePosY, t);
-    }
-    else {
-        xpos = 0;
-        ypos = 0;
-    }
-
-    circlelement.style.top = ypos + 'px';
-    circlelement.style.left = xpos + 'px';
-    */
 
 }
 
