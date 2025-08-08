@@ -350,21 +350,17 @@ for (var i = 0; i < trailParticles; i++) {
 const body = document.body;
 const html = document.documentElement;
 
-const totalHeight = Math.max(
-    body.scrollHeight,
-    body.offsetHeight,
 
-);
 
 
 
 function AnimateMouseTrail() {
 
-    let drag = 0.25;
+    let drag = 0.425;
     let t = 0.5;
     let falloff = 10;
-    let acceleration = 0.1;
-    let bounceefficency = 0.5;
+    let acceleration = 0.175;
+    let bounceefficency = 0.9;
 
 
 
@@ -411,15 +407,23 @@ function AnimateMouseTrail() {
 
             let potentialPosition = Vector2.add(trailPositions[i], trailVelocities[i]);
 
-            if (potentialPosition.x > innerWidth -1) {
+            let totalHeight = Math.max(
+                body.scrollHeight,
+                body.offsetHeight,
+                html.clientHeight,
+                html.scrollHeight,
+            );
+
+
+            if (potentialPosition.x > innerWidth - innerWidth / 50) {
                 trailVelocities[i].x *= -bounceefficency;
-                potentialPosition.x = innerWidth;
+                potentialPosition.x = innerWidth - innerWidth / 50;
              //   console.log("bounce");
             }
 
-            if (potentialPosition.y > totalHeight -1) {
+            if (potentialPosition.y > totalHeight - (totalHeight / 50) ) {
                 trailVelocities[i].y *= -bounceefficency;
-                potentialPosition.y = totalHeight;
+                potentialPosition.y = totalHeight - (totalHeight / 50) ;
 
             }
 
