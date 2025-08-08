@@ -9,11 +9,78 @@ let step = 0.05;
 const baseStep = 0.05;
 let pow = 1.25;
 const basePow = 1.25;
+let doAccel = true;
 
 let leftButtonElement = document.getElementById("leftCycle");
 
 let rightButtonElement = document.getElementById("rightCycle"); 
 
+
+
+class Vector2 {
+    x = 0;
+    y = 0;
+
+    static get zero() {
+        return new Vector2(0, 0);
+    }
+
+    static get up() {
+        return new Vector2(0, 1);
+    }
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
+      
+    }
+    get sqrMagnitude() {
+        return Math.pow(this.x, 2) + Math.pow(this.y, 2)
+    } 
+    get magnitude() {
+        return Math.sqrt(this.sqrMagnitude);
+    } 
+
+    get normalize() {
+        let mag = this.magnitude;
+
+        if (mag == 0) {
+            return Vector2.zero;
+        }
+
+        return Vector2.mult(this,1/mag);
+    } 
+
+    static distance(a,b) {
+        return new Vector2(subtract(a,b).magnitude);
+    }
+
+    static mult(a,t) {
+        return new Vector2(a.x * t, a.y * t);
+
+    }
+
+    static add(a,b) {
+        return new Vector2(a.x + b.x, a.y + b.y);
+    }
+
+    static subtract(a,b) {
+        return new Vector2(a.x - b.x, a.y - b.y);
+    }
+
+    static dot(a,b) {
+        return (a.x * b.x) + (a.y * b.y)
+    }
+
+    static cross(a,b) {
+        return (a.x * b.y) - (a.y * b.x)
+    }
+
+    static scale(a,b) {
+        return new Vector2(a.x * b.x, a.y * b.y);
+    }
+
+    
+}
 
 function ScrollAnimation() {
     animationRunning = true;
@@ -91,11 +158,18 @@ document.addEventListener('keydown', function (event) {
         animationQueue = 1;
     }
 
+    console.log(event.key)
+
     if (event.key == "ArrowLeft") {
        // console.log('Key Pressed:', event.key); // Logs the character of the key pressed
         animationQueue = -1;
     }
 
+    if (event.key == "a") {
+        //   console.log('Key Pressed:', event.key); // Logs the character of the key pressed
+        doAccel = ! doAccel;
+;
+    }
 
     if (animationRunning == false) {
         TryStartAnimation(); 
@@ -152,8 +226,7 @@ function TryStartAnimation() {
 }
 
 
-let mousePosX = 0;
-let mousePosY = 0;
+let mousePos = Vector2.zero;
 
 
 class ProjectPanelData {
@@ -252,15 +325,15 @@ function Update() {
 
 let trailParticles = 20;
 let trail = [];
-let trailPositionsX = [];
-let trailPositionsY = [];
-
+let trailPositions = [];
+let trailVelocities = [];
 let trailElement = document.getElementById("trail");
 
 for (var i = 0; i < trailParticles; i++) {
     trailElement.innerHTML += "<div id=" + ("circle" + (i + 1)) +" class=\"circle\"> </div>";
-    trailPositionsX.push(0)
-    trailPositionsY.push(0)
+    trailPositions.push(Vector2.zero)
+    trailVelocities.push(Vector2.zero)
+
 }
 
 for (var i = 0; i < trailParticles; i++) {
@@ -272,57 +345,106 @@ for (var i = 0; i < trailParticles; i++) {
 
 
 
-
 function AnimateMouseTrail() {
 
+    let drag = 0.65;
     let t = 0.5;
     let falloff = 10;
+    let acceleration = 0.03;
+
+
+
 
     for (var i = 0; i < trail.length; i++) {
 
-        if (i == 0) {
 
-           
+        if (doAccel) {
 
-        
-            trailPositionsY[i] = parseFloat(trail[i].style.top) - (parseInt(trail[i].clientHeight) / 2) * t;
-            trailPositionsX[i] = parseFloat(trail[i].style.left) - (parseInt(trail[i].clientWidth) / 2) * t;
+            if (i == 0) {
 
-            if (!isNaN(trailPositionsX[i]) && !isNaN(trailPositionsY[i])) {
-                trailPositionsX[i] = lerp(trailPositionsX[i], mousePosX, t);
-                trailPositionsY[i] = lerp(trailPositionsY[i], mousePosY, t);
+                if (!isNaN(trailPositions[i].x) && !isNaN(trailPositions[i].y)) {
+                    trailPositions[i] = lerp(trailPositions[i], mousePos, t);
+                }
+                else {
+                    trailPositions[i] = Vector2.zero;
+                }
             }
             else {
-                trailPositionsX[i] = 0;
-                trailPositionsY[i] = 0;
+
+
+                if (!isNaN(trailPositions[i].x) && !isNaN(trailPositions[i].y)) {
+                    
+
+                    let mag = trailVelocities[i].sqrMagnitude;
+
+                
+                   // console.log(mag);
+                   
+
+                  
+
+                    mag *= drag;
+                    mag = Math.sqrt(mag);
+                   
+                    let normalize = trailVelocities[i].normalize;
+                 //   console.log(normalize. magnitude);
+
+                    trailVelocities[i] = Vector2.mult(normalize,mag);
+
+
+                  
+
+
+
+                    trailVelocities[i] = Vector2.add(Vector2.mult(Vector2.subtract(trailPositions[i - 1], trailPositions[i]), acceleration), trailVelocities[i]);
+                    trailPositions[i] = Vector2.add(trailPositions[i], trailVelocities[i]);
+
+                }
+                else {
+                    trailPositions[i] = Vector2.zero;
+                }
+
+
+
+
             }
-
-      
-
         }
         else {
-           
 
-        //    TrailPositionsY[i] = parseFloat(circlelement.style.top) - (parseInt(Trail[i].clientHeight) / 2) * t;
-        //    TrailPositionsY[i] = parseFloat(circlelement.style.left) - (parseInt(Trail[i].clientWidth) / 2) * t;
 
-            if (!isNaN(trailPositionsX[i]) && !isNaN(trailPositionsY[i])) {
+            if (i == 0) {
+                if (!isNaN(trailPositions[i].x) && !isNaN(trailPositions[i].y)) {
 
-                trailPositionsX[i] = lerp(trailPositionsX[i], trailPositionsX[i - 1], t * (falloff / (i + (falloff - 1))));
-                trailPositionsY[i] = lerp(trailPositionsY[i], trailPositionsY[i - 1], t * (falloff / (i + (falloff - 1))));
+                    trailPositions[i] = lerp(trailPositions[i], mousePos, t);
+                }
+                else {
+                    trailPositions[i] = Vector2.zero;
+
+                }
             }
             else {
-                trailPositionsX[i] = 0;
-                trailPositionsY[i] = 0;
+
+                if (!isNaN(trailPositions[i].x) && !isNaN(trailPositions[i].y)) {
+
+                    trailPositions[i] = lerp(trailPositions[i], trailPositions[i - 1], t * (falloff / (i + (falloff - 1))));
+                }
+                else {
+                    trailPositions[i] = Vector2.zero;
+                }
             }
-
-
-
-
         }
 
-        trail[i].style.top = trailPositionsY[i] + 'px';
-        trail[i].style.left = trailPositionsX[i] + 'px';
+
+
+
+
+
+
+
+
+
+        trail[i].style.top = trailPositions[i].y + 'px';
+        trail[i].style.left = trailPositions[i].x + 'px';
 
 
         trail[i].style.width = (12 / (i + 10)) + '%';
@@ -336,8 +458,8 @@ requestAnimationFrame(Update);
 document.addEventListener('mousemove', function (event) {
 
 
-    mousePosX = event.pageX;
-    mousePosY = event.pageY;
+    mousePos = new Vector2(event.pageX, event.pageY);
+
 
 }); 
 
@@ -347,6 +469,11 @@ document.addEventListener('mousemove', function (event) {
 
 function lerp(start, end, t)
 {
+    if (start instanceof Vector2 && end instanceof Vector2) {
+        return Vector2.add(start, Vector2.mult(Vector2.subtract(end,start),t))
+    }
+
+
 
     return (start + (end-start) * t);
 }
