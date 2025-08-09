@@ -70,20 +70,47 @@
         </div>
 
         <div class="test">
+
+
+
             <h3>Mouse Trail Settings:</h3>
-            <p>Drag:</p>
-            <div class="slidecontainer">
-                <input type="range" min="50" max="1000" value="175" class="slider" id="drag">
+
+            <button class="modebutton" onclick="ToggleAccel()">  <p>Switch Mode</p> </button>
+
+            <div class="accelsettings" id="accelSettings">
+
+                <p>Acceleration Mode Settings:</p>
+
+                <p>Drag:</p>
+                <div class="slidecontainer">
+                    <input type="range" min="50" max="1000" value="175" class="slider" id="drag">
+                </div>
+                <p>Acceleration:</p>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="250" value="65" class="slider" id="accel">
+                </div>
+
+
             </div>
-            <p>Acceleration:</p>
-            <div class="slidecontainer">
-                <input type="range" min="0" max="250" value="65" class="slider" id="accel">
+
+            <div class="lerpsettings" id="lerpSettings">
+
+                <p>Distance Mode Settings:</p>
+
+                <p>Speed:</p>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="5" class="slider" id="lerp">
+                </div>
+
+
+
             </div>
 
             <p>Length:</p>
             <div class="slidecontainer">
                 <input type="range" min="0" max="100" value="5" class="slider" id="len">
             </div>
+
 
 
 

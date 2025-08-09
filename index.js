@@ -85,6 +85,8 @@ class Vector2 {
 
 }
 
+let mousePos = Vector2.zero;
+
 
 // trail vars
 
@@ -122,33 +124,140 @@ function GenerateTrail() {
 
 
 var dragslider = document.getElementById("drag");
-
 var accelslider = document.getElementById("accel");
-
 var lengthslider = document.getElementById("len");
+var lerpslider = document.getElementById("lerp");
+
+
+lerpslider.oninput = function () {
+    console.log(this.value);
+    localStorage.setItem("lerpSpeed", this.value / 100)
+    trailInterolationRate = this.value / 100;
+}
+
 
 accelslider.oninput = function () {
     console.log(this.value);
+    localStorage.setItem("trailAccel", this.value / 1000)
     trailAcceleration = this.value / 1000;
 }
 
 
 lengthslider.oninput = function () {
     console.log(this.value);
+    localStorage.setItem("trailLength", this.value)
     trailParticles = this.value;
     GenerateTrail()
 }
 
 dragslider.oninput = function () {
     console.log(this.value);
+    localStorage.setItem("trailDrag", this.value / 1000)
+
     trailDrag = (this.value / 1000);
 }
 
+
+
+//console.log(trailAcceleration);
+//console.log(trailDrag);
+//console.log(trailParticles);
+
+LoadTrailVars();
+
 GenerateTrail();
 
+ToggleAccel();
+
+function ToggleAccel() {
+
+    // this is done too early on purpose because this function is called on load which flips the bool
+    localStorage.setItem("doAccel", doAccel)
+
+    doAccel = !doAccel;
+    let accelSettings = document.getElementById("accelSettings");
+    let lerpSettings = document.getElementById("lerpSettings");
+
+    accelSettings.style.display = (doAccel) ? "initial" : "none";
+    lerpSettings.style.display = (!doAccel) ? "block" : "none";
+
+
+}
 
 
 
+function LoadTrailVars() {
+
+    let tempDoAcc = localStorage.getItem("doAccel");
+
+    doAccel = (tempDoAcc === "true") ? true : false;
+
+    let acc = parseFloat(localStorage.getItem("trailAccel"));
+    let len = parseFloat(localStorage.getItem("trailLength"));
+    let drg = parseFloat(localStorage.getItem("trailDrag"));
+    let spd = parseFloat(localStorage.getItem("lerpSpeed"));
+
+
+
+    if (trail)
+
+    if (!isNaN(spd)) {
+
+        console.log(spd);
+        trailInterolationRate = spd;
+        lerpslider.value = spd * 100;
+    }
+
+
+    if (!isNaN(acc)) {
+ 
+        trailAcceleration = acc;
+        accelslider.value = acc * 1000;
+    }
+
+    if (!isNaN(len)) {
+   
+        trailParticles = len;
+        lengthslider.value = len ;
+    }
+
+
+    if (!isNaN(drg)) {
+
+        trailDrag = drg;
+        dragslider.value = drg * 1000;
+     
+
+
+    }
+
+   // console.log(trailAcceleration);
+  //  console.log(trailDrag);
+  //  console.log(trailParticles);
+
+}
+
+function HandleScrollEdges() {
+
+    if (projectindex == projects.length - 1) {
+
+        rightButtonElement.disabled = true;
+    }
+    else {
+        rightButtonElement.disabled = false;
+
+    }
+
+    if (projectindex == 0) {
+        leftButtonElement.disabled = true;
+
+    }
+    else {
+        leftButtonElement.disabled = false;
+
+    }
+
+}
 
 
 function ScrollAnimation() {
@@ -166,11 +275,12 @@ function ScrollAnimation() {
       //  console.log("RestartedAnimation");
         projectindex += scrollDirection;
 
+        HandleScrollEdges();
         let samedir = animationQueue == scrollDirection;
 
         
         if (TryStartAnimation() && samedir) {
-            step += 0.05;
+            step += 0.02;
             pow = 1;
         }
 
@@ -182,8 +292,9 @@ function ScrollAnimation() {
 
     }
     else {
-     
+   
         projectindex += scrollDirection;
+        HandleScrollEdges();
         animationProgress = 0;
         animationRunning = false;
         pow = basePow;
@@ -303,7 +414,6 @@ function TryStartAnimation() {
 }
 
 
-let mousePos = Vector2.zero;
 
 
 class ProjectPanelData {
@@ -362,25 +472,6 @@ AnimateProjects();
 function Update() {
 
 
-    if (projectindex == projects.length - 1) {
-
-        rightButtonElement.disabled = true;
-    }
-    else {
-        rightButtonElement.disabled = false;
-
-    }
-
-
-    if (projectindex == 0) {
-        leftButtonElement.disabled = true;
-
-    }
-    else {
-        leftButtonElement.disabled = false;
-
-    }
-
 
     if (animationRunning == false) {
 
@@ -425,7 +516,10 @@ function AnimateMouseTrail() {
 
         if (doAccel) {
 
-          
+         //   console.log(trailAcceleration);
+         //   console.log(trailDrag);
+          //  console.log(trailParticles);
+          //  console.log(mousePos);
 
             if (i == 0) {
 

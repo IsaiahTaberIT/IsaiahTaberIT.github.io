@@ -166,7 +166,7 @@ h1 {
     position: absolute;
     overflow: hidden;
     width: 100%;
-    height: 140vh;
+    height: 175vh;
 }
 .circle {
     position: absolute;
@@ -218,16 +218,20 @@ h1 {
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: thin;
+    scroll-behavior: smooth;
+    scrollbar-color: white black;
 }
 
+    .test scroll{
+        background-color: black;
+    }
 
-
-.upperpanel {
-    position: sticky;
-    top: 0px;
-    height: 50vh;
-    overflow: hidden;
-}
+    .upperpanel {
+        position: sticky;
+        top: 0px;
+        height: 75vh;
+        overflow: hidden;
+    }
 
 .mainheader {
     position: relative;
@@ -244,7 +248,15 @@ slidecontainer {
     width: 100%; /* Width of the outside container */
 }
 
-/* The slider itself */
+.accelsettings {
+    display: contents;
+}
+
+.modebutton {
+    border-radius: 10px ;
+}
+
+
 .slider {
     -webkit-appearance: none; /* Override default CSS styles */
     appearance: none;
@@ -262,3 +274,6 @@ slidecontainer {
     .slider:hover {
         opacity: 1; /* Fully shown on mouse-over */
     }
+
+
+    
