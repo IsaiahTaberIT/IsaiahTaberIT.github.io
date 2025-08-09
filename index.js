@@ -15,8 +15,6 @@ let leftButtonElement = document.getElementById("leftCycle");
 
 let rightButtonElement = document.getElementById("rightCycle"); 
 
-
-
 class Vector2 {
     x = 0;
     y = 0;
@@ -28,23 +26,23 @@ class Vector2 {
     static get up() {
         return new Vector2(0, 1);
     }
-    constructor(x,y) {
+    constructor(x, y) {
         this.x = x;
         this.y = y;
-      
+
     }
     get sqrMagnitude() {
         return Math.pow(this.x, 2) + Math.pow(this.y, 2)
-    } 
+    }
     get magnitude() {
         return Math.sqrt(this.sqrMagnitude);
-    } 
+    }
 
-    static pow(a,p) {
-       
+    static pow(a, p) {
+
 
         return new Vector2(Math.pow(a.x, p), Math.pow(a.y, p));
-    } 
+    }
     get normalize() {
         let mag = this.magnitude;
 
@@ -52,40 +50,106 @@ class Vector2 {
             return Vector2.zero;
         }
 
-        return Vector2.mult(this,1/mag);
-    } 
-
-    static distance(a,b) {
-        return new Vector2(subtract(a,b).magnitude);
+        return Vector2.mult(this, 1 / mag);
     }
 
-    static mult(a,t) {
+    static distance(a, b) {
+        return new Vector2(subtract(a, b).magnitude);
+    }
+
+    static mult(a, t) {
         return new Vector2(a.x * t, a.y * t);
 
     }
 
-    static add(a,b) {
+    static add(a, b) {
         return new Vector2(a.x + b.x, a.y + b.y);
     }
 
-    static subtract(a,b) {
+    static subtract(a, b) {
         return new Vector2(a.x - b.x, a.y - b.y);
     }
 
-    static dot(a,b) {
+    static dot(a, b) {
         return (a.x * b.x) + (a.y * b.y)
     }
 
-    static cross(a,b) {
+    static cross(a, b) {
         return (a.x * b.y) - (a.y * b.x)
     }
 
-    static scale(a,b) {
+    static scale(a, b) {
         return new Vector2(a.x * b.x, a.y * b.y);
     }
 
-    
+
 }
+
+
+// trail vars
+
+let trailDrag = 0.175;
+let trailInterolationRate = 0.5;
+let trailSizeFalloff = 10;
+let trailAcceleration = 0.065;
+let trailBounceEfficency = 0.9;
+
+let trailParticles = 5;
+let trail = [];
+let trailPositions = [];
+let trailVelocities = [];
+let trailElement = document.getElementById("trail");
+
+function GenerateTrail() {
+
+    trailElement.innerHTML = "";
+    trail = [];
+    trailPositions = [];
+    trailVelocities = [];
+
+    for (var i = 0; i < trailParticles; i++) {
+        trailElement.innerHTML += "<div id=" + ("circle" + (i + 1)) + " class=\"circle\"> </div>";
+        trailPositions.push(Vector2.zero)
+        trailVelocities.push(Vector2.zero)
+
+    }
+
+    for (var i = 0; i < trailParticles; i++) {
+        trail.push(document.getElementById("circle" + (i + 1)));
+    }
+}
+
+
+
+var dragslider = document.getElementById("drag");
+
+var accelslider = document.getElementById("accel");
+
+var lengthslider = document.getElementById("len");
+
+accelslider.oninput = function () {
+    console.log(this.value);
+    trailAcceleration = this.value / 1000;
+}
+
+
+lengthslider.oninput = function () {
+    console.log(this.value);
+    trailParticles = this.value;
+    GenerateTrail()
+}
+
+dragslider.oninput = function () {
+    console.log(this.value);
+    trailDrag = (this.value / 1000);
+}
+
+GenerateTrail();
+
+
+
+
+
 
 function ScrollAnimation() {
     animationRunning = true;
@@ -102,9 +166,17 @@ function ScrollAnimation() {
       //  console.log("RestartedAnimation");
         projectindex += scrollDirection;
 
-        if (TryStartAnimation()) {
+        let samedir = animationQueue == scrollDirection;
+
+        
+        if (TryStartAnimation() && samedir) {
             step += 0.05;
             pow = 1;
+        }
+
+        if (!samedir) {
+            pow = basePow;
+            step = baseStep;
         }
       
 
@@ -313,7 +385,9 @@ function Update() {
     if (animationRunning == false) {
 
         if (step > baseStep) {
-            step -= 0.01;
+            step *= 0.98;
+
+            step -= 0.005;
         }
 
         if (step < baseStep) {
@@ -328,22 +402,8 @@ function Update() {
     requestAnimationFrame(Update);
 }
 
-let trailParticles = 50;
-let trail = [];
-let trailPositions = [];
-let trailVelocities = [];
-let trailElement = document.getElementById("trail");
 
-for (var i = 0; i < trailParticles; i++) {
-    trailElement.innerHTML += "<div id=" + ("circle" + (i + 1)) +" class=\"circle\"> </div>";
-    trailPositions.push(Vector2.zero)
-    trailVelocities.push(Vector2.zero)
 
-}
-
-for (var i = 0; i < trailParticles; i++) {
-    trail.push(document.getElementById("circle" + (i + 1)));
-}
 
 
 
@@ -356,33 +416,22 @@ const html = document.documentElement;
 
 function AnimateMouseTrail() {
 
-    let drag = 0.425;
-    let t = 0.5;
-    let falloff = 10;
-    let acceleration = 0.175;
-    let bounceefficency = 0.9;
 
 
 
-    for (var i = 0; i < trail.length; i++) {
+
+    for (var i = trail.length - 1; i >= 0; i--) {
 
 
         if (doAccel) {
 
-            let mag = Math.pow(trailVelocities[i].magnitude, 0.5);
-
-            mag *= 1 / (drag + 1);
-            mag = Math.pow(mag, 2);
-
-
-            let normalize = trailVelocities[i].normalize;
-            trailVelocities[i] = Vector2.mult(normalize, mag);
+          
 
             if (i == 0) {
 
                 if (!isNaN(trailPositions[i].x) && !isNaN(trailPositions[i].y)) {
 
-                    trailVelocities[i] = Vector2.add(Vector2.mult(Vector2.subtract(mousePos, trailPositions[i]), acceleration), trailVelocities[i]);
+                    trailVelocities[i] = Vector2.add(Vector2.mult(Vector2.subtract(mousePos, trailPositions[i]), trailAcceleration), trailVelocities[i]);
                 }
                 else {
                     trailPositions[i] = Vector2.zero;
@@ -394,7 +443,7 @@ function AnimateMouseTrail() {
                     
                 
                   
-                    trailVelocities[i] = Vector2.add(Vector2.mult(Vector2.subtract(trailPositions[i - 1], trailPositions[i]), acceleration), trailVelocities[i]);
+                    trailVelocities[i] = Vector2.add(Vector2.mult(Vector2.subtract(trailPositions[i - 1], trailPositions[i]), trailAcceleration), trailVelocities[i]);
 
 
                 }
@@ -404,6 +453,14 @@ function AnimateMouseTrail() {
 
             }
 
+            let mag = Math.pow(trailVelocities[i].magnitude, 0.5);
+
+            mag /= (trailDrag + 1);
+            mag = Math.pow(mag, 2);
+
+
+            let normalize = trailVelocities[i].normalize;
+            trailVelocities[i] = Vector2.mult(normalize, mag);
 
             let potentialPosition = Vector2.add(trailPositions[i], trailVelocities[i]);
 
@@ -416,25 +473,25 @@ function AnimateMouseTrail() {
 
 
             if (potentialPosition.x > innerWidth - innerWidth / 50) {
-                trailVelocities[i].x *= -bounceefficency;
+                trailVelocities[i].x *= -trailBounceEfficency;
                 potentialPosition.x = innerWidth - innerWidth / 50;
              //   console.log("bounce");
             }
 
             if (potentialPosition.y > totalHeight - (totalHeight / 50) ) {
-                trailVelocities[i].y *= -bounceefficency;
+                trailVelocities[i].y *= -trailBounceEfficency;
                 potentialPosition.y = totalHeight - (totalHeight / 50) ;
 
             }
 
             if (potentialPosition.x < 1) {
-                trailVelocities[i].x *= -bounceefficency;
+                trailVelocities[i].x *= -trailBounceEfficency;
                 potentialPosition.x = 0;
             }
 
 
             if (potentialPosition.y < 1) {
-                trailVelocities[i].y *= -bounceefficency;
+                trailVelocities[i].y *= -trailBounceEfficency;
                 potentialPosition.y = 0;
 
             }
@@ -448,7 +505,7 @@ function AnimateMouseTrail() {
             if (i == 0) {
                 if (!isNaN(trailPositions[i].x) && !isNaN(trailPositions[i].y)) {
 
-                    trailPositions[i] = lerp(trailPositions[i], mousePos, t);
+                    trailPositions[i] = lerp(trailPositions[i], mousePos, trailInterolationRate);
                 }
                 else {
                     trailPositions[i] = Vector2.zero;
@@ -459,7 +516,7 @@ function AnimateMouseTrail() {
 
                 if (!isNaN(trailPositions[i].x) && !isNaN(trailPositions[i].y)) {
 
-                    trailPositions[i] = lerp(trailPositions[i], trailPositions[i - 1], t * (falloff / (i + (falloff - 1))));
+                    trailPositions[i] = lerp(trailPositions[i], trailPositions[i - 1], trailInterolationRate * (trailSizeFalloff / (i + (trailSizeFalloff - 1))));
                 }
                 else {
                     trailPositions[i] = Vector2.zero;
@@ -480,7 +537,7 @@ function AnimateMouseTrail() {
         trail[i].style.left = trailPositions[i].x + 'px';
 
 
-        trail[i].style.width = (12 / (i + 10)) + '%';
+        trail[i].style.width = lerp(1, 0.1, i / trail.length) + '%';
 
     }
 

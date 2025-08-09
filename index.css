@@ -11,7 +11,7 @@ body {
     background-attachment: fixed;
     color: white;
     text-align: center;
-    background-image: radial-gradient(rgba(64,64,64,0.5),rgba(0,0,0,1)), url("Images/julia(-1.148933,0.2095252)_940x540.png");
+    background-image: radial-gradient(rgba(64,64,64,0.1),rgba(0,0,0,1)), url("Images/julia(-1.148933,0.2095252)_940x540.png");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -24,13 +24,14 @@ h1 {
     font-size: 500%;
 }
 .lowerPanel {
+    padding-top: 5%;
     text-align: center;
     position: relative;
     border: inset;
     border-color: black;
     margin-top: 0px;
     width: 100%;
-    height: 100vh;
+    height: 90vh;
     background-color: saddlebrown;
     background-image: linear-gradient(rgba(0,0,0,1),rgba(64,64,64,0.5)), url("Images/SimpleNoiseBackgroundGreyScale.png");
 }
@@ -41,6 +42,7 @@ h1 {
 
 
 .projects {
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -48,7 +50,7 @@ h1 {
     border-radius: 100px;
     text-align: center;
     width: 60%;
-    height: 60%;
+    height: 80%;
     background-color: saddlebrown;
     background-image: linear-gradient(rgba(0,0,0,1),rgba(64,64,64,0.5));
     margin-left: auto;
@@ -126,7 +128,7 @@ h1 {
     text-wrap-mode: wrap;
 }
 
-   
+
 
 
     .Cycle:hover {
@@ -164,7 +166,7 @@ h1 {
     position: absolute;
     overflow: hidden;
     width: 100%;
-    height: 200vh;
+    height: 140vh;
 }
 .circle {
     position: absolute;
@@ -190,21 +192,41 @@ h1 {
     pointer-events: none;
 }
 
-.test {
-    top: 50%;
-    left: 85%;
+.overlay2 {
+    border-radius: 100px;
     position: absolute;
-    width: 10%;
-    height: 10%;
-    background-color: aqua;
-    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(255,235,220,0) 0%, rgba(0,0,0,0.5) 90%);
+    z-index: 10;
+    pointer-events: none;
 }
+.test {
+    border: solid;
+    border-width: 10px;
+    border-color: black;
+    top: -80%;
+    left: 82.5%;
+    border-radius: 12% / 8%;
+    position: relative;
+    width: 15%;
+    height: 70%;
+    background-color: darkgray;
+    object-fit: contain;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+}
+
+
 
 .upperpanel {
     position: sticky;
     top: 0px;
-    height: 100vh;
-    overflow:hidden;
+    height: 50vh;
+    overflow: hidden;
 }
 
 .mainheader {
@@ -215,4 +237,28 @@ h1 {
 
     .mainheader p {
         z-index: 0;
+    }
+
+
+slidecontainer {
+    width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+    -webkit-appearance: none; /* Override default CSS styles */
+    appearance: none;
+    border-radius: 10px;
+    width: 80%; /* Full-width */
+    height: 25px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+
+    /* Mouse-over effects */
+    .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
     }
