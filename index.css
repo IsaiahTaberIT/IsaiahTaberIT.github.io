@@ -14,6 +14,7 @@ body {
     background-image: radial-gradient(rgba(64,64,64,0.1),rgba(0,0,0,1)), url("Images/julia(-1.148933,0.2095252)_940x540.png");
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
 }
 
 .goto{
@@ -21,28 +22,58 @@ body {
 }
 
 h1 {
+    margin-top: 7%;
     font-size: 500%;
+    font-family: Garamond;
 }
+
+.settingsbutton {
+    opacity: 1;
+    border: none;
+    height: 90%;
+    aspect-ratio: 1/1;
+    background-color: rgba(0,0,0,0);
+    background-image: url("Images/Settings_Icon.png");
+    object-fit: cover;
+    background-size: 100%;
+
+}
+
+.uppermenu {
+    position: fixed;
+    display: flex;
+    background-color: red;
+    background-image: linear-gradient(rgba(32,32,32,0.9),rgba(32,32,32,0.9)), url("Images/SimpleNoiseBackgroundGreyScale.png");
+    width: 100%;
+    height: 50px;
+    opacity: 0.9;
+    top: 0;
+    left: 0;
+    border-radius: 0% 0% 10px 10px;
+}
+
 .lowerPanel {
-    padding-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    border-radius: 30px 30px 0% 0%;
     text-align: center;
     position: relative;
-    border: inset;
-    border-color: black;
-    margin-top: 0px;
-    width: 100%;
-    height: 90vh;
+    width: 90%;
     background-color: saddlebrown;
-    background-image: linear-gradient(rgba(0,0,0,1),rgba(64,64,64,0.5)), url("Images/SimpleNoiseBackgroundGreyScale.png");
-    overflow:clip;
+    background-image: linear-gradient(rgba(0,0,0,0.95),rgba(64,64,64,0.95)), url("Images/SimpleNoiseBackgroundGreyScale.png");
+    overflow: clip;
+    box-sizing: border-box;
+    border: solid 5px black;
+    height: 90vh;
 }
 
 
 
 
 .projects {
-    position: relative;
 
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -50,8 +81,7 @@ h1 {
     text-align: center;
     width: 60%;
     height: 80%;
-    background-color: saddlebrown;
-    background-image: linear-gradient(rgba(0,0,0,1),rgba(64,64,64,0.5));
+    background-image: linear-gradient(rgba(255,130,0,0.9),rgba(60,30,0,0.85)),url("Images/SimpleNoiseBackgroundGreyScale.png");
     margin-left: auto;
     margin-right: auto;
 }
@@ -59,6 +89,24 @@ h1 {
     .projects h2 {
         z-index: 11;
     }
+
+
+.overlay {
+  
+    position: absolute;
+    top: -1px;
+    left: 0;
+    width: 100%;
+    height: 100.1%;
+    pointer-events: none;
+}
+
+.projects .overlay {
+    border-radius: 100px;
+
+    background-image: radial-gradient(rgba(255,235,220,0) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.9) 90%);
+    z-index: 10;
+}
 
 
 
@@ -181,13 +229,13 @@ h1 {
     position: absolute;
     overflow: hidden;
     width: 100%;
-    height: 175vh;
+    height: 170vh;
 }
 .circle {
     position: absolute;
     overflow: hidden;
     aspect-ratio: 1/1;
-    
+    opacity: 0.35;
     width: 1%;
     z-index: 50;
     border-radius: 200px;
@@ -195,17 +243,7 @@ h1 {
     pointer-events: none;
 }
 
-.overlay {
-    border-radius: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: radial-gradient(rgba(255,235,220,0) 0%, rgba(0,0,0,0.8) 60%, rgba(0,0,0,0.9) 90%);
-    z-index: 10;
-    pointer-events: none;
-}
+
 
 .overlay2 {
     border-radius: 100px;
@@ -218,27 +256,30 @@ h1 {
     z-index: 10;
     pointer-events: none;
 }
-.test {
+.trailsettings {
+    position: fixed;
+    display: block;
     border: solid;
-    border-width: 10px;
+    border-width: 2px;
     border-color: black;
-    top: -80%;
-    left: 82.5%;
-    border-radius: 12% / 8%;
-    position: relative;
-    width: 15%;
-    height: 70%;
+    top: 50px;
+    border-radius: 0px 30px 30px 0px;
+    width: 40%;
+    height: 90%;
     background-color: darkgray;
     object-fit: contain;
     overflow-y: scroll;
     overflow-x: hidden;
     scrollbar-width: thin;
     scroll-behavior: smooth;
-    scrollbar-color: white black;
+    scrollbar-color: rgba(90,90,90,1) rgba(0,0,100,0);
+    opacity: 0.85;
+    direction: rtl; /* Moves the scrollbar to the left */
+    z-index: 15;
 }
 
-    .test scroll{
-        background-color: black;
+    .trailsettings p {
+        padding: 0px 10px 0px 10px;
     }
 
     .upperpanel {
@@ -283,6 +324,7 @@ slidecontainer {
     opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
     -webkit-transition: .2s; /* 0.2 seconds transition on hover */
     transition: opacity .2s;
+ 
 }
 
     /* Mouse-over effects */

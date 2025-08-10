@@ -11,6 +11,10 @@ let pow = 1.25;
 const basePow = 1.25;
 let doAccel = true;
 
+const body = document.body;
+
+const html = document.documentElement;
+
 let leftButtonElement = document.getElementById("leftCycle");
 
 let rightButtonElement = document.getElementById("rightCycle"); 
@@ -19,6 +23,11 @@ let tStartColorPicker = document.getElementById("tStartColorPicker");
 
 let tEndColorPicker = document.getElementById("tEndColorPicker");
 
+let tSettingsMenu = document.getElementById("tSettingsMenu");
+
+let tSettingsButton = document.getElementById("tSettingsButton");
+
+let showTSettings = false;
 class Vector2 {
     x = 0;
     y = 0;
@@ -89,7 +98,23 @@ class Vector2 {
 
 }
 
+class ProjectPanelData {
+
+    constructor(url, href, text, inid) {
+        this.url = url;
+        this.href = href;
+        this.text = text;
+        this.id = inid;
+    }
+
+    NewProjectPanel() {
+
+        return " <div id=" + this.id + " class=\"projectpanel\">  <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + "'\" type = \"button\"" /* ><p class=\"buttontext\">" + this.text +  "</p> */ + "</button> <div class=\"shadow\"> </div> </div > "
+    }
+}
+
 let mousePos = Vector2.zero;
+let lastClientPos = Vector2.zero;
 
 
 // trail vars
@@ -106,26 +131,7 @@ let trailPositions = [];
 let trailVelocities = [];
 let trailElement = document.getElementById("trail");
 
-function GenerateTrail() {
-
-    trailElement.innerHTML = "";
-    trail = [];
-    trailPositions = [];
-    trailVelocities = [];
-
-    for (var i = 0; i < trailParticles; i++) {
-        trailElement.innerHTML += "<div id=" + ("circle" + (i + 1)) + " class=\"circle\"> </div>";
-        trailPositions.push(Vector2.zero)
-        trailVelocities.push(Vector2.zero)
-
-    }
-
-    for (var i = 0; i < trailParticles; i++) {
-        trail.push(document.getElementById("circle" + (i + 1)));
-    }
-}
-
-
+// handle inputs
 
 var dragslider = document.getElementById("drag");
 var accelslider = document.getElementById("accel");
@@ -139,13 +145,10 @@ tStartColorPicker.oninput = function () {
 }
 
 tEndColorPicker.oninput = function () {
-   
+
     localStorage.setItem("EndColor", tEndColorPicker.value)
-    
+
 }
-
-
-
 
 lerpslider.oninput = function () {
     console.log(this.value);
@@ -177,16 +180,29 @@ dragslider.oninput = function () {
 
 
 
-//console.log(trailAcceleration);
-//console.log(trailDrag);
-//console.log(trailParticles);
-
 LoadTrailVars();
 
 GenerateTrail();
 
 ToggleAccel();
+function GenerateTrail() {
 
+    trailElement.innerHTML = "";
+    trail = [];
+    trailPositions = [];
+    trailVelocities = [];
+
+    for (var i = 0; i < trailParticles; i++) {
+        trailElement.innerHTML += "<div id=" + ("circle" + (i + 1)) + " class=\"circle\"> </div>";
+        trailPositions.push(Vector2.zero)
+        trailVelocities.push(Vector2.zero)
+
+    }
+
+    for (var i = 0; i < trailParticles; i++) {
+        trail.push(document.getElementById("circle" + (i + 1)));
+    }
+}
 function ToggleAccel() {
 
     // this is done too early on purpose because this function is called on load which flips the bool
@@ -201,9 +217,6 @@ function ToggleAccel() {
 
 
 }
-
-
-
 function LoadTrailVars() {
 
     let tempDoAcc = localStorage.getItem("doAccel");
@@ -268,7 +281,6 @@ function LoadTrailVars() {
   //  console.log(trailParticles);
 
 }
-
 function HandleScrollEdges() {
 
     if (projectindex == projects.length - 1) {
@@ -290,8 +302,6 @@ function HandleScrollEdges() {
     }
 
 }
-
-
 function ScrollAnimation() {
     animationRunning = true;
     AnimateProjects();
@@ -333,7 +343,6 @@ function ScrollAnimation() {
         AnimateProjects();
     }
 }
-
 function AnimateProjects() {
 
     let scaleThreshold = 0;
@@ -368,36 +377,6 @@ function AnimateProjects() {
 
 
 }
-
-
-document.addEventListener('keydown', function (event) {
-    // Code to execute when a key is pressed down
-
-    if (event.key == "ArrowRight") {
-     //   console.log('Key Pressed:', event.key); // Logs the character of the key pressed
-        animationQueue = 1;
-    }
-
-    console.log(event.key)
-
-    if (event.key == "ArrowLeft") {
-       // console.log('Key Pressed:', event.key); // Logs the character of the key pressed
-        animationQueue = -1;
-    }
-
-    if (event.key == "a") {
-        //   console.log('Key Pressed:', event.key); // Logs the character of the key pressed
-        doAccel = ! doAccel;
-;
-    }
-
-    if (animationRunning == false) {
-        TryStartAnimation(); 
-    }
-    
-  
-
-});
 
 function Cycle(dir) {
 
@@ -445,27 +424,62 @@ function TryStartAnimation() {
     return false;
 }
 
+function ToggleSettingsMenu() {
+    showTSettings = !showTSettings;
+    if (showTSettings) {
+       
+        tSettingsMenu.style.display = 'block';
+
+    }
+    else {
+        tSettingsMenu.style.display = 'none';
+    }
+
+} 
+
+//hide the menu if clicked outside 
+
+document.addEventListener('click', function (event) {
+   // console.log("clicked")
+
+    if (!tSettingsMenu.contains(event.target) && event.target !== tSettingsButton && showTSettings) {
+
+       // console.log("clicked outside")
+        ToggleSettingsMenu();
+    }
+});
 
 
+document.addEventListener('keydown', function (event) {
+    // Code to execute when a key is pressed down
 
-class ProjectPanelData {
-  
-    constructor(url, href, text, inid) {
-        this.url = url;
-        this.href = href;
-        this.text = text;
-        this.id = inid;
+    if (event.key == "ArrowRight") {
+        //   console.log('Key Pressed:', event.key); // Logs the character of the key pressed
+        animationQueue = 1;
+    }
+
+    console.log(event.key)
+
+    if (event.key == "ArrowLeft") {
+        // console.log('Key Pressed:', event.key); // Logs the character of the key pressed
+        animationQueue = -1;
+    }
+
+    if (event.key == "a") {
+        //   console.log('Key Pressed:', event.key); // Logs the character of the key pressed
+        doAccel = !doAccel;
+        ;
+    }
+
+    if (animationRunning == false) {
+        TryStartAnimation();
     }
 
 
 
+});
 
-    NewProjectPanel() {
-
-        return " <div id=" + this.id + " class=\"projectpanel\">  <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + "'\" type = \"button\"" /* ><p class=\"buttontext\">" + this.text +  "</p> */ + "</button> <div class=\"shadow\"> </div> </div > "
-    }
-}
-
+//assign projects
 const projects = []; 
 
 projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
@@ -526,15 +540,6 @@ function Update() {
 }
 
 
-
-
-
-
-const body = document.body;
-const html = document.documentElement;
-
-
-
 function RotLerpHexColors(hexColor1, hexColor2,t) {
 
     //im going to treat the color like a vector capture it's length for the start and end
@@ -585,42 +590,15 @@ function RotLerpHexColors(hexColor1, hexColor2,t) {
 
 }
 
-
-
-
 function AnimateMouseTrail() {
-
-
-
-
 
     for (var i = trail.length - 1; i >= 0; i--) {
 
-        
-  
         let t = i / (trail.length);
-
-     
-
-        if (isNaN(t)) {
-            t = 0.5;
-        }
-
-
-        trail[i].style.backgroundColor = RotLerpHexColors(tStartColorPicker.value, tEndColorPicker.value,t)
-
-
-
-         
-
+        t = (isNaN(t)) ? 0.5 : t;
     
-
+        trail[i].style.backgroundColor = RotLerpHexColors(tStartColorPicker.value, tEndColorPicker.value,t)
         if (doAccel) {
-
-         //   console.log(trailAcceleration);
-         //   console.log(trailDrag);
-          //  console.log(trailParticles);
-          //  console.log(mousePos);
 
             if (i == 0) {
 
@@ -665,6 +643,9 @@ function AnimateMouseTrail() {
                 html.clientHeight,
                 html.scrollHeight,
             );
+
+           // console.log(trailElement.style.clientHeight);
+
 
 
             if (potentialPosition.x > innerWidth - innerWidth / 50) {
@@ -744,11 +725,15 @@ document.addEventListener('mousemove', function (event) {
 
 
     mousePos = new Vector2(event.pageX, event.pageY);
-
+    lastClientPos = new Vector2(event.clientX, event.clientY);
 
 }); 
 
 
+
+window.addEventListener("scroll", function () {
+    mousePos.y = lastClientPos.y + window.scrollY;
+});
 
 
 
