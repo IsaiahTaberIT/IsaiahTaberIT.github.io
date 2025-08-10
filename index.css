@@ -34,16 +34,15 @@ h1 {
     height: 90vh;
     background-color: saddlebrown;
     background-image: linear-gradient(rgba(0,0,0,1),rgba(64,64,64,0.5)), url("Images/SimpleNoiseBackgroundGreyScale.png");
+    overflow:clip;
 }
 
 
 
 
-
-
 .projects {
-
     position: relative;
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -63,6 +62,7 @@ h1 {
 
 
 
+
 .projectcycle {
 
     display: flex;
@@ -78,7 +78,8 @@ h1 {
 
 
 .projectcontainer {
-
+    position: relative;
+    z-index: 0;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -89,9 +90,23 @@ h1 {
     margin-right: auto;
 }
 
+
+
+.shadow {
+    position: relative;
+    width: 130%;
+    border-radius: 50%;
+    height: 40%;
+    background-image: radial-gradient(rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.5) 60%, rgba(64,64,64,0) 95%);
+    margin-left: -15%;
+    top: 55%;
+    z-index: -1;
+}
+
+
 .projectpanelbutton {
-    display: flex;
-    align-items: flex-start;
+   
+    position: relative;
     justify-content: center;
     object-fit: cover;
     background-size: 100%;
@@ -152,10 +167,10 @@ h1 {
 .projectpanel {
     text-align: center;
     border-radius: 10px;
-    margin-top: 1%;
+ 
     width: 30%;
     height: 80%;
-
+    margin: 2%;
     background-color: saddlebrown;
     background-image: linear-gradient(rgba(64,64,64,0.9),rgba(255,255,255,0.1));
 }

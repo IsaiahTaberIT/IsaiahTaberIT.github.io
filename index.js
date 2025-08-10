@@ -15,6 +15,10 @@ let leftButtonElement = document.getElementById("leftCycle");
 
 let rightButtonElement = document.getElementById("rightCycle"); 
 
+let tStartColorPicker = document.getElementById("tStartColorPicker");
+
+let tEndColorPicker = document.getElementById("tEndColorPicker");
+
 class Vector2 {
     x = 0;
     y = 0;
@@ -128,6 +132,20 @@ var accelslider = document.getElementById("accel");
 var lengthslider = document.getElementById("len");
 var lerpslider = document.getElementById("lerp");
 
+tStartColorPicker.oninput = function () {
+
+    localStorage.setItem("StartColor", tStartColorPicker.value)
+
+}
+
+tEndColorPicker.oninput = function () {
+   
+    localStorage.setItem("EndColor", tEndColorPicker.value)
+    
+}
+
+
+
 
 lerpslider.oninput = function () {
     console.log(this.value);
@@ -196,10 +214,24 @@ function LoadTrailVars() {
     let len = parseFloat(localStorage.getItem("trailLength"));
     let drg = parseFloat(localStorage.getItem("trailDrag"));
     let spd = parseFloat(localStorage.getItem("lerpSpeed"));
+    let c1 = localStorage.getItem("StartColor");
+    let c2 = localStorage.getItem("EndColor");
+
+
+    if (c1 != null) {
+
+        tStartColorPicker.value = c1;
+        
+    }
+
+
+    if (c2 != null) {
+
+        tEndColorPicker.value = c2;
+    }
 
 
 
-    if (trail)
 
     if (!isNaN(spd)) {
 
@@ -430,7 +462,7 @@ class ProjectPanelData {
 
     NewProjectPanel() {
 
-        return "<div id=" + this.id + " class=\"projectpanel\"> <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + "'\" type = \"button\"" /* ><p class=\"buttontext\">" + this.text +  "</p> */ + "</button > </div >"
+        return " <div id=" + this.id + " class=\"projectpanel\">  <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + "'\" type = \"button\"" /* ><p class=\"buttontext\">" + this.text +  "</p> */ + "</button> <div class=\"shadow\"> </div> </div > "
     }
 }
 
@@ -503,6 +535,57 @@ const html = document.documentElement;
 
 
 
+function RotLerpHexColors(hexColor1, hexColor2,t) {
+
+    //im going to treat the color like a vector capture it's length for the start and end
+    // and interpolate both seperately so colors on oposite sides wont cut through the middle
+    //of the color space, i have no idea if this is a standard algorithm or not but i wrote it for unity
+
+
+    // i dont feel like writing a vector3 class for this so manually it is
+
+
+ 
+    let r1 = parseInt(hexColor1.slice(1, 3), 16);
+    let g1 = parseInt(hexColor1.slice(3, 5), 16);
+    let b1 = parseInt(hexColor1.slice(5, 7), 16);
+
+    let r2 = parseInt(hexColor2.slice(1, 3), 16);
+    let g2 = parseInt(hexColor2.slice(3, 5), 16);
+    let b2 = parseInt(hexColor2.slice(5, 7), 16);
+
+
+
+    let r3 = lerp(r1, r2, t);
+    let g3 = lerp(g1, g2, t);
+    let b3 = lerp(b1, b2, t);
+
+
+
+    let mag1 = Math.sqrt((r1 * r1) + (g1 * g1) + (b1 * b1));
+    let mag2 = Math.sqrt((r2 * r2) + (g2 * g2) + (b2 * b2));
+    let mag3 = Math.sqrt((r3 * r3) + (g3 * g3) + (b3 * b3));
+
+   // if (mag3 < 0.01) {
+
+   // }
+
+    let mag4 = lerp(mag1, mag2,t);
+
+  //  console.log(mag4);
+
+    r3 /= (mag3 / mag4);
+    g3 /= (mag3 / mag4);
+    b3 /= (mag3 / mag4);
+ //   console.log(`rgb(${r3},${ g3 },${b3})`);
+
+
+    return `rgb(${r3},${g3},${b3})`
+
+
+}
+
+
 
 
 function AnimateMouseTrail() {
@@ -513,6 +596,24 @@ function AnimateMouseTrail() {
 
     for (var i = trail.length - 1; i >= 0; i--) {
 
+        
+  
+        let t = i / (trail.length);
+
+     
+
+        if (isNaN(t)) {
+            t = 0.5;
+        }
+
+
+        trail[i].style.backgroundColor = RotLerpHexColors(tStartColorPicker.value, tEndColorPicker.value,t)
+
+
+
+         
+
+    
 
         if (doAccel) {
 

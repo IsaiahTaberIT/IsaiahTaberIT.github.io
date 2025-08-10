@@ -61,8 +61,12 @@
 
                 </div>
 
+
                 <button id="rightCycle" class="Cycle" onclick="Cycle(1)">  </button>
             </div>
+
+       
+
 
 
             <div class="overlay"></div>
@@ -75,8 +79,28 @@
 
             <h3>Mouse Trail Settings:</h3>
 
-            <button class="modebutton" onclick="ToggleAccel()">  <p>Switch Mode</p> </button>
+            <p style="margin: auto;">Trail Colors:</p>
 
+            <div style="margin-bottom: 5%; display: flex; flex-direction: row;">
+
+                <div style="margin: auto;">
+                    <p>Start Color </p>
+                    <input style="margin: auto;" type="color" id="tStartColorPicker" value="#0000ff">
+
+                </div>
+                <div style="margin: auto;">
+                    <p>End Color</p>
+                    <input style="margin: auto;" type="color" id="tEndColorPicker" value="#0000ff">
+
+                </div>
+               
+            </div>
+
+
+
+
+
+            <button class="modebutton" onclick="ToggleAccel()">  <p>Switch Mode</p> </button>
             <div class="accelsettings" id="accelSettings">
 
                 <p>Acceleration Mode Settings:</p>
@@ -94,16 +118,11 @@
             </div>
 
             <div class="lerpsettings" id="lerpSettings">
-
                 <p>Distance Mode Settings:</p>
-
                 <p>Speed:</p>
                 <div class="slidecontainer">
                     <input type="range" min="1" max="100" value="5" class="slider" id="lerp">
                 </div>
-
-
-
             </div>
 
             <p>Length:</p>
