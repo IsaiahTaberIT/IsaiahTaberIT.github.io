@@ -84,61 +84,63 @@
 
     <div class="uppermenu">
         <button id="tSettingsButton" class="settingsbutton" onclick="ToggleSettingsMenu()">
-            >
+            
 
         </button>
     </div>
 
 
     <div class="trailsettings" id="tSettingsMenu">
+        <div class="content">
+            <h3>Mouse Trail Settings</h3>
 
+            <p style="margin: auto;">Trail Colors:</p>
 
+            <div style="margin-bottom: 5%; display: flex; flex-direction: row;">
 
-        <h3>Mouse Trail Settings</h3>
-
-        <p style="margin: auto;">Trail Colors:</p>
-
-        <div style="margin-bottom: 5%; display: flex; flex-direction: row;">
-
-            <div style="margin: auto;">
-                <p>Start Color </p>
-                <input style="margin: auto;" type="color" id="tStartColorPicker" value="#0000ff">
+                <div style="margin: auto;">
+                    <p>Start Color </p>
+                    <input style="margin: auto;" type="color" id="tStartColorPicker" value="#0000ff">
+                </div>
+                <div style="margin: auto;">
+                    <p>End Color</p>
+                    <input style="margin: auto;" type="color" id="tEndColorPicker" value="#0000ff">
+                </div>
             </div>
-            <div style="margin: auto;">
-                <p>End Color</p>
-                <input style="margin: auto;" type="color" id="tEndColorPicker" value="#0000ff">
-            </div>
-        </div>
-        <button class="modebutton" onclick="ToggleAccel()">  <p>Switch Mode</p> </button>
-        <div class="accelsettings" id="accelSettings">
+            <button class="modebutton" onclick="ToggleAccel()">  <p>Switch Mode</p> </button>
+            <div class="accelsettings" id="accelSettings">
 
-            <p>Acceleration Mode Settings:</p>
-            <p>Drag:</p>
+                <p>Acceleration Mode Settings:</p>
+                <p>Drag:</p>
+                <div class="slidecontainer">
+                    <input type="range" min="50" max="1000" value="175" class="slider" id="drag">
+                </div>
+                <p>Acceleration:</p>
+                <div class="slidecontainer">
+                    <input type="range" min="0" max="250" value="65" class="slider" id="accel">
+                </div>
+            </div>
+
+            <div class="lerpsettings" id="lerpSettings">
+                <p>Distance Mode Settings:</p>
+                <p>Speed:</p>
+                <div class="slidecontainer">
+                    <input type="range" min="1" max="100" value="5" class="slider" id="lerp">
+                </div>
+            </div>
+
+            <p>Length:</p>
             <div class="slidecontainer">
-                <input type="range" min="50" max="1000" value="175" class="slider" id="drag">
-            </div>
-            <p>Acceleration:</p>
-            <div class="slidecontainer">
-                <input type="range" min="0" max="250" value="65" class="slider" id="accel">
+                <input type="range" min="0" max="100" value="5" class="slider" id="len">
             </div>
         </div>
-
-        <div class="lerpsettings" id="lerpSettings">
-            <p>Distance Mode Settings:</p>
-            <p>Speed:</p>
-            <div class="slidecontainer">
-                <input type="range" min="1" max="100" value="5" class="slider" id="lerp">
-            </div>
-        </div>
-
-        <p>Length:</p>
-        <div class="slidecontainer">
-            <input type="range" min="0" max="100" value="5" class="slider" id="len">
-        </div>
+        
     </div>
 
-
+    <script src="logic.js"></script>
     <script src="index.js"></script>
+
+
 
 
 </body>

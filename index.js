@@ -16,107 +16,15 @@ const body = document.body;
 const html = document.documentElement;
 
 let leftButtonElement = document.getElementById("leftCycle");
-
 let rightButtonElement = document.getElementById("rightCycle"); 
-
 let tStartColorPicker = document.getElementById("tStartColorPicker");
-
 let tEndColorPicker = document.getElementById("tEndColorPicker");
-
 let tSettingsMenu = document.getElementById("tSettingsMenu");
-
 let tSettingsButton = document.getElementById("tSettingsButton");
 
 let showTSettings = false;
-class Vector2 {
-    x = 0;
-    y = 0;
-
-    static get zero() {
-        return new Vector2(0, 0);
-    }
-
-    static get up() {
-        return new Vector2(0, 1);
-    }
-    constructor(x, y) {
-        this.x = x;
-        this.y = y;
-
-    }
-    get sqrMagnitude() {
-        return Math.pow(this.x, 2) + Math.pow(this.y, 2)
-    }
-    get magnitude() {
-        return Math.sqrt(this.sqrMagnitude);
-    }
-
-    static pow(a, p) {
-
-
-        return new Vector2(Math.pow(a.x, p), Math.pow(a.y, p));
-    }
-    get normalize() {
-        let mag = this.magnitude;
-
-        if (mag == 0) {
-            return Vector2.zero;
-        }
-
-        return Vector2.mult(this, 1 / mag);
-    }
-
-    static distance(a, b) {
-        return new Vector2(subtract(a, b).magnitude);
-    }
-
-    static mult(a, t) {
-        return new Vector2(a.x * t, a.y * t);
-
-    }
-
-    static add(a, b) {
-        return new Vector2(a.x + b.x, a.y + b.y);
-    }
-
-    static subtract(a, b) {
-        return new Vector2(a.x - b.x, a.y - b.y);
-    }
-
-    static dot(a, b) {
-        return (a.x * b.x) + (a.y * b.y)
-    }
-
-    static cross(a, b) {
-        return (a.x * b.y) - (a.y * b.x)
-    }
-
-    static scale(a, b) {
-        return new Vector2(a.x * b.x, a.y * b.y);
-    }
-
-
-}
-
-class ProjectPanelData {
-
-    constructor(url, href, text, inid) {
-        this.url = url;
-        this.href = href;
-        this.text = text;
-        this.id = inid;
-    }
-
-    NewProjectPanel() {
-
-        return " <div id=" + this.id + " class=\"projectpanel\">  <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + "'\" type = \"button\"" /* ><p class=\"buttontext\">" + this.text +  "</p> */ + "</button> <div class=\"shadow\"> </div> </div > "
-    }
-}
-
 let mousePos = Vector2.zero;
 let lastClientPos = Vector2.zero;
-
-
 // trail vars
 
 let trailDrag = 0.175;
@@ -178,8 +86,6 @@ dragslider.oninput = function () {
     trailDrag = (this.value / 1000);
 }
 
-
-
 LoadTrailVars();
 
 GenerateTrail();
@@ -207,15 +113,12 @@ function ToggleAccel() {
 
     // this is done too early on purpose because this function is called on load which flips the bool
     localStorage.setItem("doAccel", doAccel)
-
     doAccel = !doAccel;
     let accelSettings = document.getElementById("accelSettings");
     let lerpSettings = document.getElementById("lerpSettings");
 
     accelSettings.style.display = (doAccel) ? "initial" : "none";
     lerpSettings.style.display = (!doAccel) ? "block" : "none";
-
-
 }
 function LoadTrailVars() {
 
@@ -230,21 +133,16 @@ function LoadTrailVars() {
     let c1 = localStorage.getItem("StartColor");
     let c2 = localStorage.getItem("EndColor");
 
-
     if (c1 != null) {
 
         tStartColorPicker.value = c1;
         
     }
 
-
     if (c2 != null) {
 
         tEndColorPicker.value = c2;
     }
-
-
-
 
     if (!isNaN(spd)) {
 
@@ -252,7 +150,6 @@ function LoadTrailVars() {
         trailInterolationRate = spd;
         lerpslider.value = spd * 100;
     }
-
 
     if (!isNaN(acc)) {
  
@@ -271,9 +168,6 @@ function LoadTrailVars() {
 
         trailDrag = drg;
         dragslider.value = drg * 1000;
-     
-
-
     }
 
    // console.log(trailAcceleration);
@@ -377,7 +271,6 @@ function AnimateProjects() {
 
 
 }
-
 function Cycle(dir) {
 
     animationQueue = dir;
@@ -390,8 +283,6 @@ function Cycle(dir) {
 }
 function TryStartAnimation() {
 
-
-
     if (animationQueue != 0) {
 
         if (animationQueue == 1 && projectindex == projects.length -1) {
@@ -400,7 +291,6 @@ function TryStartAnimation() {
 
             return false;
         }
-
 
         if (animationQueue == -1 && projectindex == 0) {
             animationQueue = 0;
@@ -423,7 +313,6 @@ function TryStartAnimation() {
 
     return false;
 }
-
 function ToggleSettingsMenu() {
     showTSettings = !showTSettings;
     if (showTSettings) {
@@ -448,25 +337,19 @@ document.addEventListener('click', function (event) {
         ToggleSettingsMenu();
     }
 });
-
-
 document.addEventListener('keydown', function (event) {
-    // Code to execute when a key is pressed down
 
     if (event.key == "ArrowRight") {
-        //   console.log('Key Pressed:', event.key); // Logs the character of the key pressed
         animationQueue = 1;
     }
 
     console.log(event.key)
 
     if (event.key == "ArrowLeft") {
-        // console.log('Key Pressed:', event.key); // Logs the character of the key pressed
         animationQueue = -1;
     }
 
     if (event.key == "a") {
-        //   console.log('Key Pressed:', event.key); // Logs the character of the key pressed
         doAccel = !doAccel;
         ;
     }
@@ -482,28 +365,30 @@ document.addEventListener('keydown', function (event) {
 //assign projects
 const projects = []; 
 
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+// put this in a function so I could shrink it through outlining in VS
+AssignProjects();
+function AssignProjects() {
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
 
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id8"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id8"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
 
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+}
 
 
 let element = document.getElementById("projectinjection")   
-
-
 
 for (var i = 0; i < projects.length; i++) {
     projects[i].id = "id" + (i + 1);
@@ -729,13 +614,9 @@ document.addEventListener('mousemove', function (event) {
 
 }); 
 
-
-
 window.addEventListener("scroll", function () {
     mousePos.y = lastClientPos.y + window.scrollY;
 });
-
-
 
 function lerp(start, end, t)
 {
