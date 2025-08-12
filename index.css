@@ -156,14 +156,16 @@ h1 {
     border-radius: 5vh;
     width: 30%;
     height: 80%;
-    margin: 2%;
+    margin: 0%;
     background-color: saddlebrown;
     background-image: linear-gradient(rgba(64,64,64,0.9),rgba(255,255,255,0.1));
 }
 
 
 
+
     .projectpanel button {
+        display: flex;
         border: none;
         position: relative;
         overflow: hidden;
@@ -176,21 +178,42 @@ h1 {
     }
 
 
-    .projectpanel button p {
-        display: inline-block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        color: white;
-        width: stretch;
-        font-size: 2vw;
-        border-radius: 20px;
-        padding: 10%;
-      
-        font-size-adjust: 0.5;
-        text-wrap-mode: wrap;
-    }
 
+
+.hover-text {
+    margin: auto;
+    margin-top: 8%;
+    margin-bottom: 100%;
+    visibility: hidden;
+    opacity: 0;
+    color: white;
+    width: stretch;
+    font-size: 1.5vw;
+    flex-shrink: 0.5;
+    text-wrap-mode: wrap;
+    transition: opacity 0.3s ease;
+}
+
+
+
+
+
+
+
+
+
+.projectpanel button:hover .hover-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+
+
+
+
+
+  
 .Cycle {
     background-size: cover;
     border-width: 0px;

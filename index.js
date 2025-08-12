@@ -250,19 +250,22 @@ function AnimateProjects() {
 
         let temp = document.getElementById("id" + (i + 1));
 
+
+
+
         let dif = 0;
 
       
         dif = 1.9 - distance;
 
-        if (dif > 0) {
+        if (dif >= 0) {
+            dif = Math.pow(dif, 1.2);
             temp.style.display = "flex";
-            temp.style.width = 30 * dif + "%";
+            temp.style.width = 25 * dif + "%";
             temp.style.height = 50 * dif + "%"
         }
         else {
             temp.style.display = "none";
-            
         }
           
    
@@ -368,7 +371,9 @@ const projects = [];
 // put this in a function so I could shrink it through outlining in VS
 AssignProjects();
 function AssignProjects() {
-    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "OpenGlSnake/index.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/2048Thumbnail.png", "https://isaiahtaberit.github.io/2048Game/", "2048"));
+    projects.push(new ProjectPanelData("Images/SnakeThumbnail.png", "https://isaiahtaberit.github.io/SnakeGame/", "Snake"));
+
     projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
