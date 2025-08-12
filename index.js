@@ -368,23 +368,23 @@ const projects = [];
 // put this in a function so I could shrink it through outlining in VS
 AssignProjects();
 function AssignProjects() {
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "OpenGlSnake/index.html", "sample text"));
     projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
 
     projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text", "id8"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
 
     projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
 }
 
 

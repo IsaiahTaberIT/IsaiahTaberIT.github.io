@@ -76,9 +76,10 @@ class ProjectPanelData {
 
     NewProjectPanel() {
         //return " <div id=" + this.id + " class=\"projectpanel\">  <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + "'\" type = \"button\"" /* ><p class=\"buttontext\">" + this.text +  "</p> */ + "</button> <div class=\"shadow\"> </div> </div > "
-        //+  "<p>" + this.text + "</p>" +
-        // <div class=\"shadow\">  </div> 
-        return " <div id=" + this.id + " class=\"projectpanel\">  <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + " type = \"button\"> <p>" + this.text + "</p> </button>  <div class=\"shadow\">  </div>  </div> "
+        // <div class=\"shadow\">  </div>
+
+       // <p>" + this.text + "</p> 
+        return " <div id=" + this.id + " class=\"projectpanel\">  <button style = \"background-image: url(" + this.url + ")\" class=\"projectpanelbutton\" onclick = \"location.href='" + this.href + "'\" type = \"button\"></button>  <div class=\"shadow\">  </div>  </div> "
 
     }
 }

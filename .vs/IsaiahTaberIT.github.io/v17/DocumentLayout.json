@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -11,8 +15,8 @@
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:logic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\PlaceHolder_Project_Background_SampleText.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Images\\PlaceHolder_Project_Background_SampleText.png||{58961B49-13E0-48C0-9258-13CBC4D40279}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -70,11 +74,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.html",
               "RelativeDocumentMoniker": "index.html",
@@ -88,13 +92,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "index.css",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css",
               "RelativeDocumentMoniker": "index.css",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css",
               "RelativeToolTip": "index.css",
-              "ViewState": "AgIAAJUAAAAAAAAAAADgv6YAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAAJMAAAAAAAAAAAAgwKsAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-08-05T04:07:46.687Z",
               "IsPinned": true,
@@ -102,13 +106,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "index.js",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.js",
               "RelativeDocumentMoniker": "index.js",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.js",
               "RelativeToolTip": "index.js",
-              "ViewState": "AgIAAMYAAAAAAAAAAIA0wHABAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAGsBAAAAAAAAAAAcwHIBAAB2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-03T18:07:10.098Z",
               "IsPinned": true,
@@ -116,16 +120,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "logic.js",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\logic.js",
               "RelativeDocumentMoniker": "logic.js",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\logic.js",
               "RelativeToolTip": "logic.js",
-              "ViewState": "AgIAAEAAAAAAAAAAAAAkwFYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwE4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-11T00:47:49.601Z",
               "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PlaceHolder_Project_Background_SampleText.png",
+              "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\PlaceHolder_Project_Background_SampleText.png",
+              "RelativeDocumentMoniker": "Images\\PlaceHolder_Project_Background_SampleText.png",
+              "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\PlaceHolder_Project_Background_SampleText.png",
+              "RelativeToolTip": "Images\\PlaceHolder_Project_Background_SampleText.png",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2025-08-12T16:01:55.338Z",
               "EditorCaption": ""
             },
             {
@@ -134,7 +150,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "ComplexBrackground1.png",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground1.png",
               "RelativeDocumentMoniker": "Images\\ComplexBrackground1.png",
@@ -145,7 +161,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ComplexBrackground2.png",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\ComplexBrackground2.png",
               "RelativeDocumentMoniker": "Images\\ComplexBrackground2.png",
@@ -156,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "SimpleNoiseBackgroundSansGradient.png",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackgroundSansGradient.png",
               "RelativeDocumentMoniker": "Images\\SimpleNoiseBackgroundSansGradient.png",
@@ -167,7 +183,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "SimpleNoiseBackground.png",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SimpleNoiseBackground.png",
               "RelativeDocumentMoniker": "Images\\SimpleNoiseBackground.png",
@@ -178,7 +194,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "julia(-1.148933,0.2095252).png",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\julia(-1.148933,0.2095252).png",
               "RelativeDocumentMoniker": "Images\\julia(-1.148933,0.2095252).png",
@@ -189,7 +205,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "background",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\background",
               "RelativeDocumentMoniker": "background",
@@ -202,7 +218,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "education",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\education",
               "RelativeDocumentMoniker": "education",
@@ -210,11 +226,12 @@
               "RelativeToolTip": "education",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAIAQAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-08-04T21:48:43.021Z"
+              "WhenOpened": "2025-08-04T21:48:43.021Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "aboutmetext",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\aboutmetext",
               "RelativeDocumentMoniker": "aboutmetext",
@@ -227,7 +244,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "about.css",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.css",
               "RelativeDocumentMoniker": "about.css",
@@ -240,7 +257,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "about.js",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.js",
               "RelativeDocumentMoniker": "about.js",
@@ -253,7 +270,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "about.html",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html",
               "RelativeDocumentMoniker": "about.html",
