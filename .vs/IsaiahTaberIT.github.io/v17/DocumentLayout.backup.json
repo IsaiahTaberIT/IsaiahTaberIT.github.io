@@ -91,8 +91,7 @@
               "ViewState": "AgIAACEAAAAAAAAAAADwv2YAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-08-03T15:45:33.713Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -102,7 +101,7 @@
               "RelativeDocumentMoniker": "index.css",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css",
               "RelativeToolTip": "index.css",
-              "ViewState": "AgIAAIkAAAAAAAAAAAAxwJ4AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAMwGsAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-08-05T04:07:46.687Z",
               "IsPinned": true,
@@ -116,7 +115,7 @@
               "RelativeDocumentMoniker": "index.js",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.js",
               "RelativeToolTip": "index.js",
-              "ViewState": "AgIAAEkBAAAAAAAAAADwv3UBAABRAAAAAAAAAA==",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAuwAUBAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-03T18:07:10.098Z",
               "IsPinned": true,
@@ -130,11 +129,14 @@
               "RelativeDocumentMoniker": "logic.js",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\logic.js",
               "RelativeToolTip": "logic.js",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFUAAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAFUAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-11T00:47:49.601Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Document",
@@ -145,12 +147,7 @@
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SnakeThumbnail.png",
               "RelativeToolTip": "Images\\SnakeThumbnail.png",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
-              "WhenOpened": "2025-08-12T18:50:02.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "WhenOpened": "2025-08-12T18:50:02.558Z"
             },
             {
               "$type": "Document",
