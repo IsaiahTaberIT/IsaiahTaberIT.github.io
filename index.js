@@ -375,22 +375,9 @@ function AssignProjects() {
     projects.push(new ProjectPanelData("Images/SnakeThumbnail.png", "https://isaiahtaberit.github.io/SnakeGame/", "Snake"));
 
     projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
+    projects.push(new ProjectPanelData("Images/WT.png", "index.html", "Website"));
     projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text", "id7"));
-    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
-
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackgroundGreyScale.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/SimpleNoiseBackground.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
-    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
-}
+    }
 
 
 let element = document.getElementById("projectinjection")   
@@ -562,6 +549,8 @@ function AnimateMouseTrail() {
 
             }
 
+
+
             trailPositions[i] = potentialPosition;
 
         }
@@ -598,8 +587,7 @@ function AnimateMouseTrail() {
 
 
 
-
-        trail[i].style.top = trailPositions[i].y + 'px';
+        trail[i].style.top = (trailPositions[i].y ) + 'px';
         trail[i].style.left = trailPositions[i].x + 'px';
 
 
