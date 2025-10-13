@@ -261,6 +261,8 @@ function AnimateProjects() {
         if (dif >= 0) {
             dif = Math.pow(dif, 1.2);
             temp.style.display = "flex";
+
+
             temp.style.width = 25 * dif + "%";
             temp.style.height = 50 * dif + "%"
         }
@@ -376,7 +378,9 @@ function AssignProjects() {
 
     projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/WT.png", "index.html", "Website"));
+    projects.push(new ProjectPanelData("Images/GravitySimThumbnail.png", "https://isaiahtaberit.github.io/GravitySimulation/", "Gravity Sim"));
     projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
+
     }
 
 

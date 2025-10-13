@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
@@ -17,6 +17,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\logic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:logic.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\aboutmetext||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aboutmetext||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SnakeThumbnail.png||{58961B49-13E0-48C0-9258-13CBC4D40279}",
@@ -29,22 +45,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\background||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:background||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\aboutmetext||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:aboutmetext||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:about.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\education||{8B382828-6202-11D1-8870-0000F87579D2}",
@@ -78,17 +78,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "index.html",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.html",
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAcwDMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAcwIwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-08-03T15:45:33.713Z",
               "IsPinned": true,
@@ -96,13 +96,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "index.css",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css",
               "RelativeDocumentMoniker": "index.css",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.css",
               "RelativeToolTip": "index.css",
-              "ViewState": "AgIAAMQAAAAAAAAAAAAMwM4AAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAKAAAAAAAAAAAAAMwKoAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-08-05T04:07:46.687Z",
               "IsPinned": true,
@@ -116,7 +116,7 @@
               "RelativeDocumentMoniker": "index.js",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\index.js",
               "RelativeToolTip": "index.js",
-              "ViewState": "AgIAAOIAAAAAAAAAAAAuwAUBAAAjAAAAAAAAAA==",
+              "ViewState": "AgIAAFkAAAAAAAAAAAAcwAgBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-08-03T18:07:10.098Z",
               "IsPinned": true,
@@ -137,12 +137,8 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 8,
               "Title": "SnakeThumbnail.png",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\SnakeThumbnail.png",
               "RelativeDocumentMoniker": "Images\\SnakeThumbnail.png",
@@ -153,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "PlaceHolder_Project_Background_SampleText.png",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\Images\\PlaceHolder_Project_Background_SampleText.png",
               "RelativeDocumentMoniker": "Images\\PlaceHolder_Project_Background_SampleText.png",
@@ -219,7 +215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 10,
               "Title": "background",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\background",
               "RelativeDocumentMoniker": "background",
@@ -255,7 +251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 4,
               "Title": "about.css",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.css",
               "RelativeDocumentMoniker": "about.css",
@@ -267,7 +263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 6,
               "Title": "about.js",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.js",
               "RelativeDocumentMoniker": "about.js",
@@ -279,15 +275,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "about.html",
               "DocumentMoniker": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html",
               "RelativeDocumentMoniker": "about.html",
               "ToolTip": "C:\\Users\\kille\\Desktop\\MyWebsite\\IsaiahTaberIT.github.io\\about.html",
               "RelativeToolTip": "about.html",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-08-03T17:10:50.609Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3822e751-eb69-4b0e-b301-595a9e4c74d5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
