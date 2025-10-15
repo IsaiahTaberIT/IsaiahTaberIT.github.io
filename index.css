@@ -11,7 +11,7 @@ html, body {
 body {
     background-attachment: fixed;
     color: white;
-    text-align: left;
+    text-align: center;
     background-color: rgba(100,100,110,1);
     /*background-image: radial-gradient(rgba(0,0,0,0.7),rgba(0,0,0,1)), url("Images/julia(-1.148933,0.2095252)_940x540.png");
   */ background-repeat: no-repeat;
@@ -72,7 +72,7 @@ h1 {
     overflow: auto;
     box-sizing: border-box;
     border: solid 5px black;
-    height: 90vh;
+    height: 10vh;
 }
 
 
@@ -176,38 +176,53 @@ h1 {
 }
 
 
+.genericbutton {
+    color: white;
+    margin: 5vh;
+    margin-bottom: 10vh;
+    padding: 2vh 5vh 2vh 5vh;
+    border-radius: 5vh;
+    border-width: 2px;
+    background-color: rgba(0,0,0,0.1);
+    box-shadow: rgb(0, 0, 0, 0.27) 1vh 1vh;
+    font-size: 20px;
+}
 
 
-    .projectpanel button {
-        display: flex;
-        border: none;
-        position: relative;
-        overflow: hidden;
-        justify-content: center;
-        background-size: cover;
-        background-position: center;
-        width: 100%;
-        height: 100%;
-        border-radius: inherit;
+    .genericbutton:hover {
+        background-color: rgba(255,255,255,0.1);
     }
 
 
-
-
-.hover-text {
-    margin: auto;
-    margin-bottom: 100%;
-    visibility: hidden;
-    opacity: 0;
-    color: white;
-    padding: 5%;
-    font-size: 1.5vw;
-    flex-shrink: 0.5;
-    text-wrap-mode: wrap;
-    transition: opacity 0.3s ease;
-    background-color: rgb(45, 42, 39);
-    border-radius: 20vh;
+.projectpanel button {
+    display: flex;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
 }
+
+  
+
+    .hover-text {
+        margin: auto;
+        margin-bottom: 100%;
+        visibility: hidden;
+        opacity: 0;
+        color: white;
+        padding: 5%;
+        font-size: 1.5vw;
+        flex-shrink: 0.5;
+        text-wrap-mode: wrap;
+        transition: opacity 0.3s ease;
+        background-color: rgb(45, 42, 39);
+        border-radius: 20vh;
+    }
 
 
 
@@ -266,6 +281,7 @@ h1 {
 
 
 .trail {
+    pointer-events: none;
     position: absolute;
     overflow: hidden;
     width: 100%;
@@ -333,12 +349,12 @@ h1 {
 
 .upperpanel {
     top: 0px;
-    height: 75vh;
     overflow: hidden;
 }
 
 .mainheader {
     position: relative;
+    text-align: center;
     z-index: 0;
     height: 80%;
 }
@@ -385,4 +401,3 @@ slidecontainer {
     }
 
 
-    

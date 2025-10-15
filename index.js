@@ -46,6 +46,12 @@ var accelslider = document.getElementById("accel");
 var lengthslider = document.getElementById("len");
 var lerpslider = document.getElementById("lerp");
 
+const bottomElement = document.getElementById('bottom');
+
+
+
+
+
 tStartColorPicker.oninput = function () {
 
     localStorage.setItem("StartColor", tStartColorPicker.value)
@@ -376,10 +382,10 @@ function AssignProjects() {
     projects.push(new ProjectPanelData("Images/2048Thumbnail.png", "https://isaiahtaberit.github.io/2048Game/", "2048"));
     projects.push(new ProjectPanelData("Images/SnakeThumbnail.png", "https://isaiahtaberit.github.io/SnakeGame/", "Snake"));
 
-    projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
+   // projects.push(new ProjectPanelData("Images/ComplexBrackground2.png", "about.html", "sample text"));
     projects.push(new ProjectPanelData("Images/WT.png", "index.html", "Website"));
     projects.push(new ProjectPanelData("Images/GravitySimThumbnail.png", "https://isaiahtaberit.github.io/GravitySimulation/", "Gravity Sim"));
-    projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
+   // projects.push(new ProjectPanelData("Images/PlaceHolder_Project_Background_SampleText.png", "about.html", "sample text"));
 
     }
 
@@ -473,6 +479,11 @@ function RotLerpHexColors(hexColor1, hexColor2,t) {
 
 function AnimateMouseTrail() {
 
+    const bottomRect = bottomElement.getBoundingClientRect();
+
+    console.log(bottomRect.bottom + window.scrollY);
+    let totalHeight = bottomRect.bottom + window.scrollY;
+    trailElement.style.height = totalHeight + "px";
     for (var i = trail.length - 1; i >= 0; i--) {
 
         let t = i / (trail.length);
@@ -518,12 +529,10 @@ function AnimateMouseTrail() {
 
             let potentialPosition = Vector2.add(trailPositions[i], trailVelocities[i]);
 
-            let totalHeight = Math.max(
-                body.scrollHeight,
-                body.offsetHeight,
-                html.clientHeight,
-                html.scrollHeight,
-            );
+          
+   
+
+        
 
            // console.log(trailElement.style.clientHeight);
 
